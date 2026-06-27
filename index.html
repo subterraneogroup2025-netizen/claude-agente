@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subterraneo Group S.L — Reformas Integrales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">SUBTERRANEO <span>GROUP</span></div>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos-terminados">Proyectos</a></li>
+      <li><a href="#en-marcha">En Marcha</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Reformas que <span class="gold">transforman</span> espacios</h1>
+      <p>Baños, cocinas y reformas integrales con acabados de calidad superior.</p>
+      <a href="#contacto" class="btn">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <h2 class="section-title">Nuestros <span class="gold">Servicios</span></h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🛁</div>
+        <h3>Reformas de Baños</h3>
+        <p>Transformamos tu baño con materiales premium, fontanería completa y diseño moderno.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍳</div>
+        <h3>Reformas de Cocinas</h3>
+        <p>Diseño funcional y estético. Mobiliario, encimeras, instalaciones y acabados.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Reformas Integrales</h3>
+        <p>Renovación completa de viviendas y locales comerciales llave en mano.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔨</div>
+        <h3>Obras y Construcción</h3>
+        <p>Albañilería, tabiquería, techos, suelos y todo tipo de obra civil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS TERMINADOS -->
+  <section class="section dark" id="proyectos-terminados">
+    <h2 class="section-title">Proyectos <span class="gold">Terminados</span></h2>
+    <div class="cards">
+      <div class="card dark-card">
+        <div class="project-img placeholder">📷</div>
+        <h3>Reforma Integral — Madrid</h3>
+        <p>Vivienda de 90m² completamente renovada. Cocina abierta, dos baños y salón.</p>
+        <span class="tag done">Completado</span>
+      </div>
+      <div class="card dark-card">
+        <div class="project-img placeholder">📷</div>
+        <h3>Baño de Diseño — Barcelona</h3>
+        <p>Reforma de baño principal con ducha italiana, suelo radiante y griferías doradas.</p>
+        <span class="tag done">Completado</span>
+      </div>
+      <div class="card dark-card">
+        <div class="project-img placeholder">📷</div>
+        <h3>Cocina Americana — Valencia</h3>
+        <p>Apertura de muro, cocina nueva con isla central y electrodomésticos integrados.</p>
+        <span class="tag done">Completado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN MARCHA -->
+  <section class="section" id="en-marcha">
+    <h2 class="section-title">Obras <span class="gold">En Marcha</span></h2>
+    <div class="cards">
+      <div class="card">
+        <div class="project-img placeholder light">📷</div>
+        <h3>Reforma Integral — Sevilla</h3>
+        <p>Piso de 75m² en proceso. Fase actual: instalaciones eléctricas y fontanería.</p>
+        <div class="progress-bar"><div class="progress" style="width: 60%"></div></div>
+        <span class="progress-label">60% completado</span>
+        <span class="tag progress-tag">En proceso</span>
+      </div>
+      <div class="card">
+        <div class="project-img placeholder light">📷</div>
+        <h3>Cocina y Baño — Málaga</h3>
+        <p>Reforma simultánea de cocina y baño. Fase actual: alicatado y carpintería.</p>
+        <div class="progress-bar"><div class="progress" style="width: 35%"></div></div>
+        <span class="progress-label">35% completado</span>
+        <span class="tag progress-tag">En proceso</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section dark" id="contacto">
+    <h2 class="section-title">Pide tu <span class="gold">Presupuesto</span></h2>
+    <form class="contact-form" onsubmit="enviarFormulario(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="tel" placeholder="Teléfono" required />
+      </div>
+      <input type="email" placeholder="Correo electrónico" required />
+      <select>
+        <option value="">¿Qué tipo de reforma necesitas?</option>
+        <option>Reforma de baño</option>
+        <option>Reforma de cocina</option>
+        <option>Reforma integral</option>
+        <option>Obra y construcción</option>
+        <option>Otro</option>
+      </select>
+      <textarea placeholder="Cuéntanos tu proyecto..." rows="4"></textarea>
+      <button type="submit" class="btn">Enviar solicitud</button>
+      <p class="form-msg" id="form-msg"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="logo">SUBTERRANEO <span>GROUP</span> <small>S.L</small></div>
+    <p>Reformas integrales · Baños · Cocinas · Construcción</p>
+    <p class="footer-copy">© 2026 Subterraneo Group S.L — Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
