@@ -19,3 +19,7 @@ Clona el repositorio y empieza a explorar:
 git clone https://github.com/subterraneogroup2025-netizen/claude-agente.git
 cd claude-agente
 ```
+
+## Licencia
+
+[MIT](LICENSE)
