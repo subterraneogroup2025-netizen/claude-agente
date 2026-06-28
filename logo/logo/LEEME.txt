@@ -1,0 +1,22 @@
+SUBTERRÁNEO GROUP — Paquete de logo
+=====================================
+Generado a partir del archivo original (idéntico a tus materiales impresos).
+
+Colores de marca:
+  Oro #C19A3D  ·  Oro sólido #C39A3C  ·  Crema #F2EEE3  ·  Negro #0A0A0A
+Tipografías: EB Garamond (logotipo) · Montserrat (GROUP)
+
+CONTENIDO
+---------
+/png-transparente/   Logo completo, fondo transparente — 256/512/1024/2000 px  (USO WEB)
+/png-negro/          Logo completo, fondo negro #0A0A0A — 256/512/1024/2000 px
+/isotipo/            Solo el edificio (transparente y negro) — 128/256/512 px
+/favicon/            Favicon cuadrado — 32/64/128/256 px (transparente y negro)
+/perfil-redes/       Cuadrado para foto de perfil — 512/1024 px (transparente y negro)
+/svg/                Versiones SVG escalables (logo e isotipo, fondo transparente y negro)
+
+RECOMENDACIONES WEB
+-------------------
+· Header / web sobre fondo oscuro:  png-transparente o svg-transparente
+· Favicon del sitio:                favicon/favicon-256.png  (o el SVG isotipo)
+· Foto de perfil redes:             perfil-redes/perfil-*-512.png

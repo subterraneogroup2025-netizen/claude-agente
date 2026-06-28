@@ -3,255 +3,296 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subterráneo Group S.L — Reformas de Alto Standing</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Subterráneo Group S.L — Reformas con Carácter</title>
+  <meta name="description" content="Reformas integrales, baños, cocinas, fachadas y obra nueva en la Comunidad Valenciana. Personal con más de 15 años de experiencia." />
+  <meta property="og:title" content="Subterráneo Group S.L — Reformas con Carácter" />
+  <meta property="og:description" content="Damos nueva vida a cada espacio, con el oficio y la confianza que una reforma merece." />
+  <meta property="og:image" content="logo/logo/perfil-redes/perfil-transparente-512.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" sizes="256x256" href="logo/logo/favicon/favicon-256.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/logo/favicon/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <a href="#inicio" class="nav-logo">
-      <img src="logo.png" alt="Subterráneo Group" />
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <a href="#inicio" class="nav__logo">
+      <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" />
     </a>
-    <ul class="nav-links">
+    <ul class="nav__links">
+      <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#en-marcha">En Marcha</a></li>
-      <li><a href="#contacto" class="nav-cta">Presupuesto</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto" class="nav__cta">Presupuesto</a></li>
     </ul>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- HERO -->
+  <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
-    <div class="hero-overlay"></div>
-    <img src="bano-premium.jpg" alt="Reforma de lujo" class="hero-bg" />
-    <div class="hero-content">
-      <p class="hero-label">Reformas de Alto Standing</p>
-      <h1>Espacios que<br><em>definen</em> el lujo</h1>
-      <p class="hero-sub">Transformamos viviendas y locales con materiales de primera calidad y acabados impecables.</p>
-      <div class="hero-actions">
+    <img src="bano-premium.jpg" alt="" class="hero__bg" aria-hidden="true" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content reveal">
+      <p class="label-gold">Reformas con carácter</p>
+      <h1 class="hero__title">Damos nueva vida<br><em>a cada espacio</em></h1>
+      <p class="hero__sub">Con el oficio y la confianza que una reforma merece.</p>
+      <div class="hero__actions">
         <a href="#contacto" class="btn-gold">Solicitar presupuesto</a>
-        <a href="#proyectos" class="btn-outline">Ver proyectos</a>
+        <a href="#portfolio" class="btn-ghost">Ver proyectos</a>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span></span>
-    </div>
+    <div class="hero__scroll" aria-hidden="true"><span></span></div>
   </section>
 
-  <!-- INTRO STRIP -->
-  <div class="strip">
-    <div class="strip-item"><span class="strip-num">+50</span><span class="strip-label">Proyectos completados</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">100%</span><span class="strip-label">Satisfacción garantizada</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">10+</span><span class="strip-label">Años de experiencia</span></div>
-    <div class="strip-divider"></div>
-    <div class="strip-item"><span class="strip-num">Llave</span><span class="strip-label">en mano</span></div>
+  <!-- ═══ STRIP MÉTRICAS ═══ -->
+  <div class="metrics">
+    <div class="metric reveal">
+      <span class="metric__num">+15</span>
+      <span class="metric__label">Años de experiencia</span>
+      <span class="metric__sub">Personal con más de 15 años de experiencia</span>
+    </div>
+    <div class="metric__sep"></div>
+    <div class="metric reveal">
+      <span class="metric__num">+20</span>
+      <span class="metric__label">Obras en la Comunidad Valenciana</span>
+    </div>
+    <div class="metric__sep"></div>
+    <div class="metric reveal">
+      <span class="metric__num">100%</span>
+      <span class="metric__label">Clientes satisfechos</span>
+    </div>
+    <div class="metric__sep"></div>
+    <div class="metric reveal">
+      <span class="metric__num">360°</span>
+      <span class="metric__label">Gestión integral</span>
+    </div>
   </div>
 
-  <!-- SERVICIOS -->
-  <section class="section" id="servicios">
-    <div class="section-header">
-      <p class="section-label">Lo que hacemos</p>
+  <!-- ═══ SOBRE NOSOTROS ═══ -->
+  <section class="section" id="nosotros">
+    <div class="about">
+      <div class="about__img reveal">
+        <img src="obra-exterior.jpg" alt="Fachada terminada por Subterráneo Group" />
+        <div class="about__badge">
+          <span class="about__badge-num">+15</span>
+          <span class="about__badge-label">años de oficio</span>
+        </div>
+      </div>
+      <div class="about__text reveal">
+        <p class="label-gold">Quiénes somos</p>
+        <h2>Subterráneo Group —<br><em>Reforma integral</em></h2>
+        <div class="gold-bar"></div>
+        <p class="body-text">Somos una empresa especializada en reformas integrales. Contamos con personal con más de 15 años de experiencia en el sector, y trabajamos con materiales de primera calidad seleccionados para cada proyecto.</p>
+        <p class="body-text">Nos encargamos de todo: proyecto, licencias, ejecución y acabados. Tu única llamada necesaria.</p>
+        <div class="about__pills">
+          <span class="pill">Reforma 360°</span>
+          <span class="pill">Llave en mano</span>
+          <span class="pill">100% garantía</span>
+          <span class="pill">Presupuesto sin compromiso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICIOS ═══ -->
+  <section class="section dark-bg" id="servicios">
+    <div class="section__header reveal">
+      <p class="label-gold">Lo que hacemos</p>
       <h2>Nuestros <em>Servicios</em></h2>
-      <div class="gold-line"></div>
+      <div class="gold-bar center"></div>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-img">
-          <img src="bano-madera.jpg" alt="Reformas de baños" />
-        </div>
-        <div class="service-body">
-          <h3>Reformas de Baños</h3>
-          <p>Diseño personalizado, materiales premium y fontanería completa. Desde minimalista hasta spa privado.</p>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-img">
-          <img src="cocina-moderna.jpg" alt="Reformas de cocinas" />
-        </div>
-        <div class="service-body">
-          <h3>Reformas de Cocinas</h3>
-          <p>Mobiliario a medida, encimeras de piedra natural, electrodomésticos integrados y acabados de lujo.</p>
+    <div class="services">
+      <div class="service reveal">
+        <div class="service__img"><img src="interior-reforma.jpg" alt="Rehabilitación de viviendas" /></div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Rehabilitación de Viviendas</h3>
+          <p>Renovación integral de pisos y casas. Distribución, instalaciones, carpintería y acabados de primera.</p>
         </div>
       </div>
-      <div class="service-card">
-        <div class="service-img">
-          <img src="interior-reforma.jpg" alt="Reformas integrales" />
-        </div>
-        <div class="service-body">
-          <h3>Reformas Integrales</h3>
-          <p>Renovación completa de viviendas y locales comerciales. Proyecto llave en mano con gestión total.</p>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-img">
-          <img src="obra-exterior.jpg" alt="Obras y construcción" />
-        </div>
-        <div class="service-body">
-          <h3>Construcción y Fachadas</h3>
-          <p>Albañilería, fachadas, instalaciones eléctricas y sanitarias. Obra civil de principio a fin.</p>
+      <div class="service reveal">
+        <div class="service__img"><img src="obra-exterior.jpg" alt="Fachadas" /></div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Fachadas</h3>
+          <p>Rehabilitación, impermeabilización, aislamiento térmico y acabados exteriores de alta durabilidad.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- PROYECTOS TERMINADOS -->
-  <section class="section dark-section" id="proyectos">
-    <div class="section-header">
-      <p class="section-label">Nuestro trabajo</p>
-      <h2>Proyectos <em>Terminados</em></h2>
-      <div class="gold-line"></div>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card large">
-        <img src="bano-premium.jpg" alt="Baño premium con espejo LED" />
-        <div class="project-info">
-          <span class="project-tag">Baño</span>
-          <h3>Baño de lujo con espejo LED</h3>
-          <p>Ducha italiana, espejo retroiluminado, grifería de diseño y suelo porcelánico efecto mármol.</p>
+      <div class="service reveal">
+        <div class="service__img"><img src="bano-premium.jpg" alt="Baños" /></div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Baños</h3>
+          <p>Diseño exclusivo, duchas italianas, grifería de diseño y materiales premium. Desde funcional hasta spa privado.</p>
         </div>
       </div>
-      <div class="project-card">
-        <img src="bano-madera.jpg" alt="Baño madera y cristal" />
-        <div class="project-info">
-          <span class="project-tag">Baño</span>
-          <h3>Baño madera y cristal</h3>
-          <p>Revestimiento efecto madera, mampara negra y sanitarios suspendidos.</p>
+      <div class="service reveal">
+        <div class="service__img"><img src="cocina-moderna.jpg" alt="Cocinas" /></div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Cocinas</h3>
+          <p>Mobiliario a medida, encimeras de piedra natural, electrodomésticos integrados y acabados impecables.</p>
         </div>
       </div>
-      <div class="project-card">
-        <img src="cocina-moderna.jpg" alt="Cocina moderna" />
-        <div class="project-info">
-          <span class="project-tag">Cocina</span>
-          <h3>Cocina minimalista</h3>
-          <p>Muebles blancos lacados, electrodomésticos integrados y encimera de silestone.</p>
+      <div class="service reveal">
+        <div class="service__img"><img src="bano-madera.jpg" alt="Pavimentos" /></div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Pavimentos</h3>
+          <p>Porcelánico, madera natural, microcemento y tarima flotante. Instalación profesional con garantía total.</p>
         </div>
       </div>
-      <div class="project-card">
-        <img src="interior-reforma.jpg" alt="Reforma integral" />
-        <div class="project-info">
-          <span class="project-tag">Integral</span>
-          <h3>Reforma integral de vivienda</h3>
-          <p>Distribución abierta, carpintería de madera natural y acabados de primera.</p>
+      <div class="service reveal">
+        <div class="service__img service__img--logo">
+          <img src="logo/logo/png-negro/subterraneo-logo-negro-512.png" alt="Obra nueva" />
+        </div>
+        <div class="service__body">
+          <div class="service__icon">⬡</div>
+          <h3>Obra Nueva</h3>
+          <p>Construcción desde cero. Gestión completa de proyecto, licencias y ejecución con todos los gremios.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EN MARCHA -->
-  <section class="section" id="en-marcha">
-    <div class="section-header">
-      <p class="section-label">Actualidad</p>
-      <h2>Obras <em>En Marcha</em></h2>
-      <div class="gold-line"></div>
+  <!-- ═══ GALERÍA ═══ -->
+  <section class="section dark-bg" id="galeria">
+    <div class="section__header reveal">
+      <p class="label-gold">Detalles que marcan la diferencia</p>
+      <h2>Galería de <em>Trabajos</em></h2>
+      <div class="gold-bar center"></div>
     </div>
-    <div class="active-grid">
-      <div class="active-card">
-        <div class="active-img">
-          <img src="obra-exterior.jpg" alt="Obra en marcha" />
-          <span class="active-badge">En proceso</span>
-        </div>
-        <div class="active-body">
-          <h3>Reforma de fachada</h3>
-          <p>Rehabilitación completa de fachada exterior, impermeabilización y pintura.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div>
-            <span class="progress-pct">65%</span>
-          </div>
-        </div>
-      </div>
-      <div class="active-card">
-        <div class="active-img">
-          <img src="obra-empresa.jpg" alt="Obra con maquinaria" />
-          <span class="active-badge">En proceso</span>
-        </div>
-        <div class="active-body">
-          <h3>Rehabilitación integral</h3>
-          <p>Reforma estructural con maquinaria especializada. Instalaciones y acabados en curso.</p>
-          <div class="progress-wrap">
-            <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
-            <span class="progress-pct">40%</span>
-          </div>
-        </div>
-      </div>
+    <div class="gallery">
+      <div class="gallery__item reveal"><img src="bano-premium.jpg" alt="Baño premium" /></div>
+      <div class="gallery__item reveal"><img src="bano-madera.jpg" alt="Baño madera" /></div>
+      <div class="gallery__item reveal"><img src="cocina-moderna.jpg" alt="Cocina" /></div>
+      <div class="gallery__item reveal"><img src="interior-reforma.jpg" alt="Interior reforma" /></div>
+      <div class="gallery__item reveal"><img src="obra-exterior.jpg" alt="Fachada" /></div>
+      <div class="gallery__item reveal"><img src="obra-empresa.jpg" alt="Obra en proceso" /></div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="section dark-section" id="contacto">
-    <div class="section-header">
-      <p class="section-label">Hablemos</p>
+  <!-- ═══ TESTIMONIOS — pendiente de reseñas reales ═══ -->
+  <section class="section" id="testimonios">
+    <div class="section__header reveal">
+      <p class="label-gold">Lo que dicen nuestros clientes</p>
+      <h2>Opiniones <em>de Clientes</em></h2>
+      <div class="gold-bar center"></div>
+    </div>
+    <div class="testimonials-empty reveal">
+      <div class="testimonials-empty__icon">✦</div>
+      <p class="testimonials-empty__text">Próximamente compartiremos aquí las experiencias reales de nuestros clientes.<br>Si ya has trabajado con nosotros, nos encantaría conocer tu opinión.</p>
+      <a href="#contacto" class="btn-gold">Cuéntanos tu experiencia</a>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACTO ═══ -->
+  <section class="section dark-bg" id="contacto">
+    <div class="section__header reveal">
+      <p class="label-gold">Hablemos de tu proyecto</p>
       <h2>Solicita tu <em>Presupuesto</em></h2>
-      <div class="gold-line"></div>
+      <div class="gold-bar center"></div>
     </div>
-    <div class="contact-wrap">
-      <div class="contact-info">
-        <p>Cuéntanos tu proyecto y te preparamos un presupuesto detallado sin compromiso. Respondemos en menos de 24 horas.</p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <span class="contact-icon">✉</span>
+    <div class="contact">
+      <div class="contact__info reveal">
+        <p class="body-text">Cuéntanos tu proyecto y te preparamos un presupuesto detallado sin compromiso. Respondemos en menos de 24 horas.</p>
+        <div class="contact__items">
+          <div class="contact__item">
+            <span class="contact__icon">✉</span>
             <span>subterraneogroup2025@gmail.com</span>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">◎</span>
-            <span>España</span>
+          <div class="contact__item">
+            <span class="contact__icon">✆</span>
+            <span>635 71 19 20 · 747 41 68 14</span>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">◎</span>
+            <span>Comunidad Valenciana y alrededores</span>
           </div>
         </div>
+        <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" class="contact__logo" />
       </div>
-      <form class="contact-form" onsubmit="enviarFormulario(event)">
+      <form class="contact__form reveal" id="contactForm" novalidate>
         <div class="form-row">
           <div class="form-field">
-            <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre completo" required />
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required />
           </div>
           <div class="form-field">
-            <label>Teléfono</label>
-            <input type="tel" placeholder="+34 600 000 000" required />
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" required />
           </div>
         </div>
         <div class="form-field">
-          <label>Correo electrónico</label>
-          <input type="email" placeholder="correo@ejemplo.com" required />
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="tipo">Tipo de reforma</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecciona una opción</option>
+              <option>Rehabilitación de vivienda</option>
+              <option>Fachada</option>
+              <option>Baño</option>
+              <option>Cocina</option>
+              <option>Pavimentos</option>
+              <option>Obra nueva</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="zona">Zona / Localidad</label>
+            <input id="zona" name="zona" type="text" placeholder="Ciudad o municipio" />
+          </div>
         </div>
         <div class="form-field">
-          <label>Tipo de reforma</label>
-          <select>
-            <option value="">Selecciona una opción</option>
-            <option>Reforma de baño</option>
-            <option>Reforma de cocina</option>
-            <option>Reforma integral</option>
-            <option>Construcción y fachadas</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Cuéntanos tu proyecto</label>
-          <textarea placeholder="Describe brevemente lo que necesitas..." rows="4"></textarea>
+          <label for="desc">Descripción del proyecto</label>
+          <textarea id="desc" name="desc" rows="4" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
         </div>
         <button type="submit" class="btn-gold">Enviar solicitud</button>
-        <p class="form-success" id="form-msg"></p>
+        <p class="form__success" id="form-msg"></p>
       </form>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
-    <div class="footer-logo">
-      <img src="logo.png" alt="Subterráneo Group" />
+    <div class="footer__top">
+      <img src="logo/logo/isotipo/transparente/subterraneo-isotipo-transparente-256.png" alt="Subterráneo Group" class="footer__logo" />
+      <p class="footer__tagline">Reformas integrales · Baños · Cocinas · Fachadas · Obra nueva</p>
+      <nav class="footer__nav" aria-label="Navegación footer">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portfolio">Proyectos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-    <p class="footer-tagline">Reformas integrales · Baños · Cocinas · Construcción</p>
-    <div class="footer-divider"></div>
-    <p class="footer-copy">© 2026 Subterráneo Group S.L — Todos los derechos reservados</p>
+    <div class="footer__divider"></div>
+    <p class="footer__copy">© 2026 Subterráneo Group S.L — Todos los derechos reservados</p>
   </footer>
 
+  <!-- WhatsApp flotante -->
+  <a class="whatsapp-btn" href="https://wa.me/34638571920?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.862L.057 23.428a.75.75 0 00.916.916l5.566-1.475A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.737 9.737 0 01-4.964-1.358l-.355-.211-3.684.976.976-3.684-.211-.355A9.738 9.738 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox__prev" onclick="event.stopPropagation(); lightboxMove(-1)">‹</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+    <button class="lightbox__next" onclick="event.stopPropagation(); lightboxMove(1)">›</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
