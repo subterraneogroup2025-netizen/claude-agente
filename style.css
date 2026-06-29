@@ -413,6 +413,10 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
 .footer__nav a { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-lbl); transition: color 0.3s; }
 .footer__nav a:hover { color: var(--gold); }
 .footer__divider { width: 40px; height: 1px; background: #222; margin: 2rem auto; }
+.footer__legal { display: flex; gap: 0.8rem; justify-content: center; align-items: center; margin-bottom: 0.8rem; }
+.footer__legal a { font-size: 0.65rem; color: var(--text-lbl); letter-spacing: 1px; transition: color 0.3s; }
+.footer__legal a:hover { color: var(--gold); }
+.footer__legal span { color: #333; font-size: 0.65rem; }
 .footer__copy { font-size: 0.65rem; color: #333; }
 
 /* ── WHATSAPP FLOTANTE ── */
