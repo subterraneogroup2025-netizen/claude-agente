@@ -209,7 +209,7 @@
           </div>
           <div class="contact__item">
             <span class="contact__icon">✆</span>
-            <span>635 71 19 20 · 747 41 68 14</span>
+            <span>638 57 19 20 · 747 41 68 14</span>
           </div>
           <div class="contact__item">
             <span class="contact__icon">◎</span>
@@ -271,7 +271,6 @@
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
         <a href="#galeria">Galería</a>
-        <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -295,6 +294,15 @@
     <button class="lightbox__prev" onclick="event.stopPropagation(); lightboxMove(-1)">‹</button>
     <img class="lightbox__img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
     <button class="lightbox__next" onclick="event.stopPropagation(); lightboxMove(1)">›</button>
+  </div>
+
+  <!-- Banner Cookies -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Utilizamos Google Fonts, que puede recoger tu IP según su política de privacidad. No usamos cookies propias de seguimiento. <a href="privacidad.html">Más información</a></p>
+    <div class="cookie-banner__btns">
+      <button class="btn-gold" onclick="acceptCookies()">Aceptar</button>
+      <button class="btn-ghost" onclick="declineCookies()">Rechazar</button>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

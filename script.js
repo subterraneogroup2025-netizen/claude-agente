@@ -1,3 +1,16 @@
+/* ── COOKIES ── */
+function acceptCookies() {
+  localStorage.setItem('cookies', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+function declineCookies() {
+  localStorage.setItem('cookies', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+if (!localStorage.getItem('cookies')) {
+  document.getElementById('cookieBanner').classList.add('show');
+}
+
 /* ── NAV SCROLL ── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -121,7 +134,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     this.reset();
   } catch (err) {
     msg.style.color = '#e05555';
-    msg.textContent = 'Error al enviar. Llámenos directamente al 635 71 19 20.';
+    msg.textContent = 'Error al enviar. Llámenos directamente al 638 57 19 20.';
   } finally {
     btn.textContent = 'Enviar solicitud';
     btn.disabled = false;

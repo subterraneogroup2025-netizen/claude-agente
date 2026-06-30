@@ -434,6 +434,24 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
 }
 
 /* ════════════════════════════
+   COOKIE BANNER
+════════════════════════════ */
+.cookie-banner {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998;
+  background: #131210;
+  border-top: 1px solid var(--gold-rim);
+  padding: 1.2rem 2rem;
+  flex-wrap: wrap; gap: 1rem;
+  align-items: center; justify-content: space-between;
+}
+.cookie-banner.show { display: flex; }
+.cookie-banner p { font-size: 0.8rem; color: var(--text-sec); font-family: var(--sans); max-width: 680px; }
+.cookie-banner p a { color: var(--gold); text-decoration: underline; }
+.cookie-banner__btns { display: flex; gap: 0.75rem; flex-shrink: 0; }
+.cookie-banner .btn-gold, .cookie-banner .btn-ghost { padding: 0.5rem 1.4rem; font-size: 0.75rem; }
+
+/* ════════════════════════════
    LIGHTBOX
 ════════════════════════════ */
 .lightbox {
