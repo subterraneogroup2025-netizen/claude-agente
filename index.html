@@ -169,15 +169,15 @@
       <div class="gold-bar center"></div>
     </div>
     <div class="gallery">
-      <div class="gallery__item reveal"><img src="bano-premium.jpg" alt="Baño premium" /></div>
-      <div class="gallery__item reveal"><img src="bano-madera.jpg" alt="Baño madera" /></div>
-      <div class="gallery__item reveal"><img src="cocina-moderna.jpg" alt="Cocina" /></div>
-      <div class="gallery__item reveal"><img src="interior-reforma.jpg" alt="Interior reforma" /></div>
-      <div class="gallery__item reveal"><img src="obra-exterior.jpg" alt="Fachada" /></div>
-      <div class="gallery__item reveal"><img src="obra-empresa.jpg" alt="Obra en proceso" /></div>
-      <div class="gallery__item reveal"><img src="bano-ducha-italiana.jpg" alt="Baño ducha italiana" /></div>
-      <div class="gallery__item reveal"><img src="bano-banera-madera.jpg" alt="Baño bañera y mueble madera" /></div>
-      <div class="gallery__item reveal"><img src="bano-negro-moderno.jpg" alt="Baño moderno negro" /></div>
+      <div class="gallery__item reveal"><img src="bano-premium.jpg" alt="Baño premium" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="bano-ducha-italiana.jpg" alt="Baño ducha italiana" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="bano-madera.jpg" alt="Baño madera" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="bano-banera-madera.jpg" alt="Baño bañera y mueble madera" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="bano-negro-moderno.jpg" alt="Baño moderno negro" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="cocina-moderna.jpg" alt="Cocina" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="interior-reforma.jpg" alt="Interior reforma" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="obra-exterior.jpg" alt="Fachada" loading="lazy" /></div>
+      <div class="gallery__item reveal"><img src="obra-empresa.jpg" alt="Obra en proceso" loading="lazy" /></div>
     </div>
   </section>
 
@@ -189,18 +189,32 @@
       <div class="gold-bar center"></div>
     </div>
     <div class="videos-grid">
-      <div class="video-card reveal">
-        <video controls playsinline preload="metadata" poster="bano-ducha-italiana.jpg">
-          <source src="proyecto-video-1.mp4" type="video/mp4" />
-        </video>
+      <div class="video-card reveal" onclick="openVideo('proyecto-video-1.mp4')">
+        <img class="video-card__poster" src="bano-ducha-italiana.jpg" alt="Proyecto baño ducha italiana" loading="lazy" />
+        <div class="video-card__play">
+          <div class="video-card__play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-card__label">Ver proyecto</span>
+        </div>
       </div>
-      <div class="video-card reveal">
-        <video controls playsinline preload="metadata" poster="bano-negro-moderno.jpg">
-          <source src="proyecto-video-2.mp4" type="video/mp4" />
-        </video>
+      <div class="video-card reveal" onclick="openVideo('proyecto-video-2.mp4')">
+        <img class="video-card__poster" src="bano-negro-moderno.jpg" alt="Proyecto baño moderno" loading="lazy" />
+        <div class="video-card__play">
+          <div class="video-card__play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-card__label">Ver proyecto</span>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Video Lightbox -->
+  <div class="video-lightbox" id="videoLightbox" onclick="closeVideo()">
+    <button class="video-lightbox__close" onclick="closeVideo()">✕</button>
+    <video id="videoPlayer" controls playsinline onclick="event.stopPropagation()"></video>
+  </div>
 
   <!-- ═══ TESTIMONIOS — pendiente de reseñas reales ═══ -->
   <section class="section" id="testimonios">

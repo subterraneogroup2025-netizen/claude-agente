@@ -1,3 +1,24 @@
+/* ── VIDEO LIGHTBOX ── */
+function openVideo(src) {
+  const lb = document.getElementById('videoLightbox');
+  const player = document.getElementById('videoPlayer');
+  player.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  player.play();
+}
+function closeVideo() {
+  const lb = document.getElementById('videoLightbox');
+  const player = document.getElementById('videoPlayer');
+  lb.classList.remove('open');
+  player.pause();
+  player.src = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('videoLightbox').classList.contains('open')) closeVideo();
+});
+
 /* ── COOKIES ── */
 function acceptCookies() {
   localStorage.setItem('cookies', 'accepted');
