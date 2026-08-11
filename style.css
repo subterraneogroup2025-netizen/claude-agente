@@ -432,6 +432,10 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+.videos-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+}
 .video-card {
   position: relative;
   overflow: hidden;
