@@ -426,9 +426,9 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
 /* ── VÍDEOS ── */
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
