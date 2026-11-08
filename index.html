@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subterráneo Group S.L — Reformas con Carácter</title>
-  <meta name="description" content="Reformas integrales, baños, cocinas, fachadas y obra nueva en la Comunidad Valenciana. Personal con más de 15 años de experiencia." />
-  <meta property="og:title" content="Subterráneo Group S.L — Reformas con Carácter" />
-  <meta property="og:description" content="Damos nueva vida a cada espacio, con el oficio y la confianza que una reforma merece." />
-  <meta property="og:image" content="logo/logo/perfil-redes/perfil-transparente-512.png" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" sizes="256x256" href="logo/logo/favicon/favicon-256.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="logo/logo/favicon/favicon-32.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Reformas integrales, baños, cocinas, fachadas y obra nueva en la Comunidad Valenciana. Personal con más de 15 años de experiencia.">
+  <meta property="og:title" content="Subterráneo Group S.L — Reformas con Carácter">
+  <meta property="og:description" content="Damos nueva vida a cada espacio, con el oficio y la confianza que una reforma merece.">
+  <meta property="og:image" content="logo/logo/perfil-redes/perfil-transparente-512.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="256x256" href="logo/logo/favicon/favicon-256.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/logo/favicon/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org LocalBusiness — SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Subterráneo Group S.L",
+    "description": "Reformas integrales, baños, cocinas, fachadas y obra nueva en la Comunidad Valenciana. Personal con más de 15 años de experiencia.",
+    "url": "https://subterraneogroup.com",
+    "logo": "https://subterraneogroup.com/logo/logo/png-transparente/subterraneo-logo-transparente-512.png",
+    "image": "https://subterraneogroup.com/bano-premium.jpg",
+    "telephone": "+34638571920",
+    "email": "subterraneogroup2025@gmail.com",
+    "areaServed": {
+      "@type": "State",
+      "name": "Comunidad Valenciana"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Comunidad Valenciana",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34638571920",
+      "contactType": "customer service",
+      "availableLanguage": "Spanish"
+    },
+    "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de reforma",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rehabilitación de viviendas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reformas de baños" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reformas de cocinas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rehabilitación de fachadas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Obra nueva" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pavimentos" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
   <!-- ═══ NAV ═══ -->
   <nav class="nav" id="nav">
     <a href="#inicio" class="nav__logo">
-      <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" />
+      <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group">
     </a>
     <ul class="nav__links">
       <li><a href="#nosotros">Nosotros</a></li>
@@ -36,9 +85,9 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
-    <img src="bano-premium.jpg" alt="" class="hero__bg" aria-hidden="true" />
+    <img src="bano-premium.jpg" alt="" class="hero__bg" aria-hidden="true">
     <div class="hero__overlay"></div>
-    <div class="hero__content reveal">
+    <div class="hero__content reveal visible">
       <p class="label-gold">Reformas con carácter</p>
       <h1 class="hero__title">Damos nueva vida<br><em>a cada espacio</em></h1>
       <p class="hero__sub">Con el oficio y la confianza que una reforma merece.</p>
@@ -52,23 +101,23 @@
 
   <!-- ═══ STRIP MÉTRICAS ═══ -->
   <div class="metrics">
-    <div class="metric reveal">
+    <div class="metric reveal visible">
       <span class="metric__num">+15</span>
       <span class="metric__label">Años de experiencia</span>
       <span class="metric__sub">Personal con más de 15 años de experiencia</span>
     </div>
     <div class="metric__sep"></div>
-    <div class="metric reveal">
+    <div class="metric reveal visible">
       <span class="metric__num">+20</span>
       <span class="metric__label">Obras en la Comunidad Valenciana</span>
     </div>
     <div class="metric__sep"></div>
-    <div class="metric reveal">
+    <div class="metric reveal visible">
       <span class="metric__num">100%</span>
       <span class="metric__label">Clientes satisfechos</span>
     </div>
     <div class="metric__sep"></div>
-    <div class="metric reveal">
+    <div class="metric reveal visible">
       <span class="metric__num">360°</span>
       <span class="metric__label">Gestión integral</span>
     </div>
@@ -77,14 +126,14 @@
   <!-- ═══ SOBRE NOSOTROS ═══ -->
   <section class="section" id="nosotros">
     <div class="about">
-      <div class="about__img reveal">
-        <img src="obra-exterior.jpg" alt="Fachada terminada por Subterráneo Group" />
+      <div class="about__img reveal visible">
+        <img src="obra-exterior.jpg" alt="Fachada terminada por Subterráneo Group">
         <div class="about__badge">
           <span class="about__badge-num">+15</span>
           <span class="about__badge-label">años de oficio</span>
         </div>
       </div>
-      <div class="about__text reveal">
+      <div class="about__text reveal visible">
         <p class="label-gold">Quiénes somos</p>
         <h2>Subterráneo Group —<br><em>Reforma integral</em></h2>
         <div class="gold-bar"></div>
@@ -102,55 +151,55 @@
 
   <!-- ═══ SERVICIOS ═══ -->
   <section class="section dark-bg" id="servicios">
-    <div class="section__header reveal">
+    <div class="section__header reveal visible">
       <p class="label-gold">Lo que hacemos</p>
       <h2>Nuestros <em>Servicios</em></h2>
       <div class="gold-bar center"></div>
     </div>
     <div class="services">
-      <div class="service reveal">
-        <div class="service__img"><img src="interior-reforma.jpg" alt="Rehabilitación de viviendas" /></div>
+      <div class="service reveal visible">
+        <div class="service__img"><img src="interior-reforma.jpg" alt="Rehabilitación de viviendas" loading="lazy"></div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
           <h3>Rehabilitación de Viviendas</h3>
           <p>Renovación integral de pisos y casas. Distribución, instalaciones, carpintería y acabados de primera.</p>
         </div>
       </div>
-      <div class="service reveal">
-        <div class="service__img"><img src="obra-exterior.jpg" alt="Fachadas" /></div>
+      <div class="service reveal visible">
+        <div class="service__img"><img src="obra-exterior.jpg" alt="Fachadas" loading="lazy"></div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
           <h3>Fachadas</h3>
           <p>Rehabilitación, impermeabilización, aislamiento térmico y acabados exteriores de alta durabilidad.</p>
         </div>
       </div>
-      <div class="service reveal">
-        <div class="service__img"><img src="bano-premium.jpg" alt="Baños" /></div>
+      <div class="service reveal visible">
+        <div class="service__img"><img src="bano-premium.jpg" alt="Baños" loading="lazy"></div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
           <h3>Baños</h3>
           <p>Diseño exclusivo, duchas italianas, grifería de alto standing y materiales premium. Desde funcional hasta spa privado.</p>
         </div>
       </div>
-      <div class="service reveal">
-        <div class="service__img"><img src="cocina-moderna.jpg" alt="Cocinas" /></div>
+      <div class="service reveal visible">
+        <div class="service__img"><img src="cocina-moderna.jpg" alt="Cocinas" loading="lazy"></div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
           <h3>Cocinas</h3>
           <p>Mobiliario a medida, encimeras de piedra natural, electrodomésticos integrados y acabados impecables.</p>
         </div>
       </div>
-      <div class="service reveal">
-        <div class="service__img"><img src="bano-madera.jpg" alt="Pavimentos" /></div>
+      <div class="service reveal visible">
+        <div class="service__img"><img src="bano-madera.jpg" alt="Pavimentos" loading="lazy"></div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
           <h3>Pavimentos</h3>
           <p>Porcelánico, madera natural, microcemento y tarima flotante. Instalación profesional con garantía total.</p>
         </div>
       </div>
-      <div class="service reveal">
+      <div class="service reveal visible">
         <div class="service__img service__img--logo">
-          <img src="logo/logo/png-negro/subterraneo-logo-negro-512.png" alt="Obra nueva" />
+          <img src="logo/logo/png-negro/subterraneo-logo-negro-512.png" alt="Obra nueva" loading="lazy">
         </div>
         <div class="service__body">
           <div class="service__icon">⬡</div>
@@ -163,36 +212,36 @@
 
   <!-- ═══ GALERÍA ═══ -->
   <section class="section dark-bg" id="galeria">
-    <div class="section__header reveal">
+    <div class="section__header reveal visible">
       <p class="label-gold">Detalles que marcan la diferencia</p>
       <h2>Galería de <em>Trabajos</em></h2>
       <div class="gold-bar center"></div>
     </div>
     <div class="gallery">
-      <div class="gallery__item reveal"><img src="bano-premium.jpg" alt="Baño premium" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="bano-madera.jpg" alt="Baño madera" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="bano-banera-madera.jpg" alt="Baño bañera y mueble madera" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="bano-negro-moderno.jpg" alt="Baño moderno negro" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="cocina-moderna.jpg" alt="Cocina" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="interior-reforma.jpg" alt="Interior reforma" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="obra-exterior.jpg" alt="Fachada" loading="lazy" /></div>
-      <div class="gallery__item reveal"><img src="obra-empresa.jpg" alt="Obra en proceso" loading="lazy" /></div>
+      <div class="gallery__item reveal visible"><img src="bano-premium.jpg" alt="Baño premium" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="bano-madera.jpg" alt="Baño madera" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="bano-banera-madera.jpg" alt="Baño bañera y mueble madera" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="bano-negro-moderno.jpg" alt="Baño moderno negro" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="cocina-moderna.jpg" alt="Cocina" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="interior-reforma.jpg" alt="Interior reforma" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="obra-exterior.jpg" alt="Fachada" loading="lazy"></div>
+      <div class="gallery__item reveal visible"><img src="obra-empresa.jpg" alt="Obra en proceso" loading="lazy"></div>
     </div>
   </section>
 
   <!-- ═══ VÍDEOS ═══ -->
   <section class="section" id="videos">
-    <div class="section__header reveal">
+    <div class="section__header reveal visible">
       <p class="label-gold">El trabajo habla por sí solo</p>
       <h2>Proyectos en <em>Marcha</em></h2>
       <div class="gold-bar center"></div>
     </div>
     <div class="videos-grid videos-grid--single">
-      <div class="video-card reveal" onclick="openVideo('proyecto-video-3.mp4')">
-        <img class="video-card__poster" src="cocina-moderna.jpg" alt="Proyecto en marcha" loading="lazy" />
+      <div class="video-card reveal visible" onclick="openVideo('proyecto-video-3.mp4')">
+        <img class="video-card__poster" src="cocina-moderna.jpg" alt="Proyecto en marcha" loading="lazy">
         <div class="video-card__play">
           <div class="video-card__play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
           </div>
           <span class="video-card__label">Ver proyecto</span>
         </div>
@@ -208,12 +257,12 @@
 
   <!-- ═══ TESTIMONIOS — pendiente de reseñas reales ═══ -->
   <section class="section" id="testimonios">
-    <div class="section__header reveal">
+    <div class="section__header reveal visible">
       <p class="label-gold">Lo que dicen nuestros clientes</p>
       <h2>Opiniones <em>de Clientes</em></h2>
       <div class="gold-bar center"></div>
     </div>
-    <div class="testimonials-empty reveal">
+    <div class="testimonials-empty reveal visible">
       <div class="testimonials-empty__icon">✦</div>
       <p class="testimonials-empty__text">Próximamente compartiremos aquí las experiencias reales de nuestros clientes.<br>Si ya has trabajado con nosotros, nos encantaría conocer tu opinión.</p>
       <a href="#contacto" class="btn-gold">Cuéntanos tu experiencia</a>
@@ -222,13 +271,13 @@
 
   <!-- ═══ CONTACTO ═══ -->
   <section class="section dark-bg" id="contacto">
-    <div class="section__header reveal">
+    <div class="section__header reveal visible">
       <p class="label-gold">Hablemos de tu proyecto</p>
       <h2>Solicita tu <em>Presupuesto</em></h2>
       <div class="gold-bar center"></div>
     </div>
     <div class="contact">
-      <div class="contact__info reveal">
+      <div class="contact__info reveal visible">
         <p class="body-text">Cuéntanos tu proyecto y te preparamos un presupuesto detallado sin compromiso. Respondemos en menos de 24 horas.</p>
         <div class="contact__items">
           <div class="contact__item">
@@ -244,22 +293,22 @@
             <span>Comunidad Valenciana y alrededores</span>
           </div>
         </div>
-        <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" class="contact__logo" />
+        <img src="logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" class="contact__logo">
       </div>
-      <form class="contact__form reveal" id="contactForm" novalidate>
+      <form class="contact__form reveal visible" id="contactForm" novalidate>
         <div class="form-row">
           <div class="form-field">
             <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required />
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
           </div>
           <div class="form-field">
             <label for="telefono">Teléfono</label>
-            <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" required />
+            <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" required>
           </div>
         </div>
         <div class="form-field">
           <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+          <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required>
         </div>
         <div class="form-row">
           <div class="form-field">
@@ -277,7 +326,7 @@
           </div>
           <div class="form-field">
             <label for="zona">Zona / Localidad</label>
-            <input id="zona" name="zona" type="text" placeholder="Ciudad o municipio" />
+            <input id="zona" name="zona" type="text" placeholder="Ciudad o municipio">
           </div>
         </div>
         <div class="form-field">
@@ -293,7 +342,7 @@
   <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
     <div class="footer__top">
-      <img src="logo/logo/isotipo/transparente/subterraneo-isotipo-transparente-256.png" alt="Subterráneo Group" class="footer__logo" />
+      <img src="logo/logo/isotipo/transparente/subterraneo-isotipo-transparente-256.png" alt="Subterráneo Group" class="footer__logo">
       <p class="footer__tagline">Reformas integrales · Baños · Cocinas · Fachadas · Obra nueva</p>
       <nav class="footer__nav" aria-label="Navegación footer">
         <a href="#nosotros">Nosotros</a>
@@ -313,14 +362,31 @@
 
   <!-- WhatsApp flotante -->
   <a class="whatsapp-btn" href="https://wa.me/34638571920?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.862L.057 23.428a.75.75 0 00.916.916l5.566-1.475A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.737 9.737 0 01-4.964-1.358l-.355-.211-3.684.976.976-3.684-.211-.355A9.738 9.738 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.862L.057 23.428a.75.75 0 00.916.916l5.566-1.475A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.737 9.737 0 01-4.964-1.358l-.355-.211-3.684.976.976-3.684-.211-.355A9.738 9.738 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"></path></svg>
   </a>
+
+  <!-- Barra CTA Móvil -->
+  <div class="mobile-cta-bar" aria-label="Contacto rápido">
+    <a href="tel:+34638571920" class="mobile-cta-bar__call" aria-label="Llamar ahora">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+      </svg>
+      Llamar
+    </a>
+    <a href="https://wa.me/34638571920?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto" target="_blank" rel="noopener" class="mobile-cta-bar__wp" aria-label="Escribir por WhatsApp">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.532 5.862L.057 23.428a.75.75 0 00.916.916l5.566-1.475A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.737 9.737 0 01-4.964-1.358l-.355-.211-3.684.976.976-3.684-.211-.355A9.738 9.738 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox__close" onclick="closeLightbox()">✕</button>
     <button class="lightbox__prev" onclick="event.stopPropagation(); lightboxMove(-1)">‹</button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
     <button class="lightbox__next" onclick="event.stopPropagation(); lightboxMove(1)">›</button>
   </div>
 
@@ -335,5 +401,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
