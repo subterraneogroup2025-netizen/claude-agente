@@ -27,7 +27,7 @@
 .m-usp span { font-size: 0.64rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-lbl); }
 
 .m-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; padding: 1.4rem 0; }
-.m-chip { border: 1px solid var(--gold-rim); color: var(--text-sec); padding: 0.5rem 1.05rem; font-size: 0.78rem; letter-spacing: 0.5px; border-radius: 40px; transition: border-color .2s, color .2s; }
+.m-chip { background: none; font-family: var(--sans); cursor: pointer; border: 1px solid var(--gold-rim); color: var(--text-sec); padding: 0.5rem 1.05rem; font-size: 0.78rem; letter-spacing: 0.5px; border-radius: 40px; transition: border-color .2s, color .2s; }
 .m-chip:hover { border-color: var(--gold); color: var(--gold); }
 .m-chip.is-on { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 600; }
 
