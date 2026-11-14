@@ -1,0 +1,23 @@
+CÓMO PONER LOS PRECIOS DE LOS SUELOS
+====================================
+
+1. Abre precios.csv con Excel (o con el Bloc de notas).
+2. En la columna "precio_m2" escribe el precio de VENTA por m², con IVA incluido
+   (es el que verá el cliente). Ejemplo: 39,90
+   - Deja la casilla vacía si ese producto debe seguir como "Precio a consultar".
+   - Si Excel pregunta al guardar, guarda en formato "CSV UTF-8 (delimitado por comas)"
+     y mantén el punto y coma (;) como separador.
+3. Regenera la web: abre PowerShell en la carpeta de la web y ejecuta
+
+     powershell -ExecutionPolicy Bypass -File materiales\_datos\generar.ps1
+
+   (o pídeselo a Claude: "ya están los precios, regenera la web").
+
+Con el precio puesto, cada ficha muestra el €/m², el precio por caja, el total en la
+calculadora y los datos de precio para Google.
+
+OTROS ARCHIVOS
+- productos.csv: las 77 referencias (nombre, formato, código STN, catálogo, fotos, descripción).
+- fotos.csv: el pie de cada foto.
+- generar.ps1: crea /materiales/, las 9 categorías, las 77 fichas y /sitemap.xml.
+Esta carpeta empieza por "_" y por eso GitHub Pages no la publica.

@@ -16,19 +16,20 @@ function closeVideo() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && document.getElementById('videoLightbox').classList.contains('open')) closeVideo();
+  const lb = document.getElementById('videoLightbox');
+  if (e.key === 'Escape' && lb && lb.classList.contains('open')) closeVideo();
 });
 
 /* ── COOKIES ── */
-function acceptCookies() {
-  localStorage.setItem('cookies', 'accepted');
+function storeCookieChoice(value) {
+  try { localStorage.setItem('cookies', value); } catch (e) { /* almacenamiento bloqueado */ }
   document.getElementById('cookieBanner').classList.remove('show');
 }
-function declineCookies() {
-  localStorage.setItem('cookies', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-}
-if (!localStorage.getItem('cookies')) {
+function acceptCookies() { storeCookieChoice('accepted'); }
+function declineCookies() { storeCookieChoice('declined'); }
+let cookieChoice = null;
+try { cookieChoice = localStorage.getItem('cookies'); } catch (e) { /* almacenamiento bloqueado */ }
+if (!cookieChoice && document.getElementById('cookieBanner')) {
   document.getElementById('cookieBanner').classList.add('show');
 }
 
@@ -87,7 +88,8 @@ function lightboxMove(dir) {
 }
 
 document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  const lb = document.getElementById('lightbox');
+  if (!lb || !lb.classList.contains('open')) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') lightboxMove(-1);
   if (e.key === 'ArrowRight') lightboxMove(1);
@@ -122,7 +124,8 @@ const EMAILJS_PUBLIC_KEY  = 'R3Ey8-rse7M2TZAEE';
 const EMAILJS_SERVICE_ID  = 'service_rogfukp';
 const EMAILJS_TEMPLATE_ID = 'template_rjdp271';
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+const contactForm = document.getElementById('contactForm');
+if (contactForm) contactForm.addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type="submit"]');
   const msg = document.getElementById('form-msg');

@@ -62,7 +62,8 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
 }
 .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
 .btn-ghost {
-  display: inline-block; border: 1px solid rgba(242,238,227,0.35);
+  display: inline-block; background: none; font-family: var(--sans); cursor: pointer;
+  border: 1px solid rgba(242,238,227,0.35);
   color: var(--text); padding: 0.85rem 2rem;
   font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase;
   font-weight: 400; transition: border-color 0.3s, color 0.3s; border-radius: 1px;
