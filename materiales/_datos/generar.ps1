@@ -87,13 +87,13 @@ $catDefs = @(
      seo = @('Los suelos efecto piedra son de los más buscados para reformas actuales: aportan calidez, combinan con madera y textiles naturales y no pasan de moda.', 'Trabajamos piedras calizas, areniscas y piedras con relieve en grandes formatos, con acabados mate, lappato y pulido para que elijas el nivel de brillo de tu suelo.')
      f = { param($p) $p.efecto -eq 'piedra' -and $p.linea -ne 'xlim' } }
   @{ slug = 'suelo-porcelanico-imitacion-madera'; nombre = 'Imitación madera'; h1 = 'Suelo porcelánico <em>imitación madera</em>'
-     title = 'Suelo porcelánico imitación madera: roble y lama XL | Subterráneo Group'
-     desc = 'Porcelánico imitación madera en roble, haya y tonos miel, con lamas de hasta 180 cm. También antideslizante para baños y terrazas. Calcula m² y pide presupuesto.'
+     title = 'Suelo porcelánico imitación madera: roble y lama XL | Subterráneo'
+     desc = 'Porcelánico imitación madera en roble, haya y tonos miel, con lamas de hasta 180 cm. También antideslizante para baños y terrazas. Pide presupuesto.'
      intro = 'La calidez de la tarima de madera con la resistencia del porcelánico: roble, haya y tonos miel, en lamas de hasta 180 cm.'
      seo = @('El porcelánico imitación madera es la opción más demandada para salones y dormitorios: tiene el aspecto de la tarima natural pero no se raya, no le afecta el agua y es compatible con suelo radiante.', 'Las lamas largas, como la de 30 × 180 cm, reproducen tablas de madera de gran tamaño; las versiones antideslizantes permiten llevar el mismo suelo al baño o a la terraza.')
      f = { param($p) $p.efecto -eq 'madera' } }
   @{ slug = 'suelos-efecto-cemento'; nombre = 'Efecto cemento'; h1 = 'Suelos porcelánicos <em>efecto cemento</em>'
-     title = 'Suelos porcelánicos efecto cemento y microcemento | Subterráneo Group'
+     title = 'Suelos porcelánicos efecto cemento y microcemento | Subterráneo'
      desc = 'Porcelánico efecto cemento en tonos marfil, beige, perla y greige, en mate, lappato y pulido. La estética del microcemento sin sus fisuras. Pide presupuesto.'
      intro = 'La estética continua del microcemento sin fisuras ni mantenimiento, en tonos marfil, beige, perla y greige.'
      seo = @('El efecto cemento es la base de los interiores minimalistas: superficies lisas y continuas que dejan todo el protagonismo a la luz y al mobiliario.', 'En porcelánico evitas las fisuras y el mantenimiento del microcemento, y en formatos de 100 × 100 o 120 × 120 cm consigues un suelo casi sin juntas.')
@@ -105,25 +105,25 @@ $catDefs = @(
      seo = @('El terrazo vive un resurgir en el diseño de interiores: aporta textura y personalidad a baños, cocinas y zonas de paso.', 'En porcelánico mantiene la estética del terrazo tradicional sin necesidad de pulidos ni tratamientos.')
      f = { param($p) $p.efecto -eq 'terrazo' } }
   @{ slug = 'suelos-exterior-antideslizantes'; nombre = 'Exterior y piscina'; h1 = 'Suelos de <em>exterior antideslizantes</em>'
-     title = 'Suelos de exterior antideslizantes para terraza y piscina | Subterráneo Group'
-     desc = 'Porcelánico antideslizante C3 para terrazas, jardines y piscinas, incluido 2 cm de grosor. A juego con los suelos de interior. Presupuesto con colocación en Valencia.'
+     title = 'Suelos de exterior antideslizantes para terraza y piscina'
+     desc = 'Porcelánico antideslizante C3 para terrazas, jardines y piscinas, incluido 2 cm de grosor. A juego con los suelos de interior. Presupuesto con colocación.'
      intro = 'Porcelánico antideslizante para terrazas, jardines y piscinas, con piezas de 2 cm de grosor y a juego con los suelos de interior.'
      seo = @('En exterior el suelo tiene que ser seguro y resistente: estos porcelánicos tienen clase antideslizante C3, soportan heladas y el sol del Mediterráneo y no pierden color.', 'Muchas series tienen la misma estética en interior y exterior, así el salón continúa hacia la terraza sin cambio de suelo. Las piezas de 2 cm se pueden colocar también en seco sobre grava o césped.')
      f = { param($p) $p.uso -in @('exterior', 'antid', 'inout') } }
   @{ slug = 'porcelanico-pulido'; nombre = 'Porcelánico pulido'; h1 = 'Porcelánico <em>pulido</em> de alto brillo'
-     title = 'Porcelánico pulido de alto brillo: mármol y piedra | Subterráneo Group'
+     title = 'Porcelánico pulido de alto brillo: mármol y piedra | Subterráneo'
      desc = 'Suelos de porcelánico pulido con brillo espejo: mármoles Calacatta, Carrara, mármoles negros y piedras, en 120x120, 100x100, 75x150 y 60x120. Pide presupuesto.'
      intro = 'Brillo espejo para espacios de lujo: mármoles y piedras en porcelánico pulido de gran formato.'
      seo = @('El porcelánico pulido recibe un tratamiento mecánico que deja la superficie lisa y brillante como un espejo: multiplica la luz y da a la estancia un aire de hotel de lujo.', 'Es ideal para salones, recibidores y cocinas abiertas. Para baños y zonas húmedas recomendamos un acabado satinado o mate.')
      f = { param($p) $p.acabado -like 'Pulido*' -and $p.linea -ne 'xlim' } }
   @{ slug = 'porcelanico-gran-formato'; nombre = 'Gran formato'; h1 = 'Porcelánico de <em>gran formato</em>'
-     title = 'Porcelánico de gran formato 120x120, 75x150 y 100x100 | Subterráneo Group'
+     title = 'Porcelánico de gran formato: 120x120, 75x150 y 100x100'
      desc = 'Suelos porcelánicos de gran formato: 120x120, 75x150, 100x100 y lamas de 180 cm. Menos juntas y más amplitud. Efecto mármol, piedra, cemento y madera.'
      intro = 'Piezas de 120 × 120, 75 × 150 y 100 × 100 cm y lamas de 180 cm: menos juntas, más amplitud.'
      seo = @('El gran formato es la tendencia más clara en suelos: al reducir el número de juntas el pavimento se ve continuo y la estancia parece más grande.', 'Requiere una colocación cuidadosa, con base bien nivelada y herramientas específicas: nuestro equipo se encarga del suministro y de la instalación.')
      f = { param($p) $p.formato -in @('120x120', '75x150', '100x100', '30x180') -and $p.linea -ne 'xlim' } }
   @{ slug = 'placas-porcelanicas-xlim'; nombre = 'Placas XLIM'; h1 = 'Placas porcelánicas <em>XLIM 120 × 280</em>'
-     title = 'Placas porcelánicas XLIM 120x280 para encimeras y paredes | Subterráneo Group'
+     title = 'Placas porcelánicas XLIM 120x280 para encimeras y paredes'
      desc = 'Placas porcelánicas XLIM de 120x280 cm y 6 mm para encimeras de cocina, baños, paredes sin juntas y mobiliario. Mármoles y piedras. Pide presupuesto.'
      intro = 'Placas de 120 × 280 cm y solo 6 mm para encimeras, paredes sin juntas y mobiliario.'
      seo = @('Las placas XLIM permiten revestir una pared entera o una encimera con muy pocas juntas. Son ligeras, resistentes al calor y a las manchas.', 'Combínalas con el suelo de la misma serie para conseguir un acabado continuo en cocinas y baños.')
@@ -264,8 +264,8 @@ $cards
 # ── Listado general y categorías ──
 Listing $prods @{
   url = '/materiales/'; titleShort = 'Suelos porcelánicos'
-  title = 'Suelos porcelánicos en Valencia: mármol, madera y gran formato | Subterráneo Group'
-  desc = 'Más de 100 suelos porcelánicos de STN Cerámica: efecto mármol pulido, imitación madera, piedra, cemento, terrazo y exterior antideslizante. Calcula m² y pide presupuesto.'
+  title = 'Suelos porcelánicos en Valencia: mármol, madera y gran formato'
+  desc = 'Más de 100 suelos porcelánicos de STN Cerámica: mármol pulido, imitación madera, piedra, cemento, terrazo y exterior. Calcula los m² y pide presupuesto.'
   h1 = 'Suelos <em>porcelánicos</em>'
   intro = 'Porcelánico de primera calidad fabricado en Castellón. Calcula los metros que necesitas y te enviamos el presupuesto, con la colocación incluida si la quieres.'
   seoTitle = 'Suministro e instalación de suelos en Valencia'
@@ -288,8 +288,15 @@ foreach ($p in $prods) {
   $crumbItems = @(@('Inicio', '/'), @('Materiales', '/materiales/'), @($cat.nombre, "/materiales/$($cat.slug)/"), @("$($p.nombre) $($p.formato)", $null))
   $efTxt = $efectoTxt[$p.efecto]
   $tipo = if ($p.linea -eq 'xlim') { 'Placa porcelánica' } else { 'Porcelánico' }
-  $title = "$($p.nombre) $($p.formato) | $tipo $efTxt | Subterráneo"
-  $desc = "$($p.nombre) en $(Fmt $p.formato) cm: $($tipo.ToLower()) $efTxt en acabado $($p.acabado.ToLower()). Calcula las $($p.unidad)s que necesitas y pide presupuesto con colocación en Valencia."
+  # Título: lo bastante corto para que Google no lo corte (marca solo si cabe)
+  $efCap = $efTxt.Substring(0, 1).ToUpper() + $efTxt.Substring(1)
+  $tBase = "$($p.nombre) $($p.formato) · $efCap"
+  $title = if (("$tBase | Subterráneo").Length -le 62) { "$tBase | Subterráneo" } else { $tBase }
+  # Descripción: 120-158 caracteres
+  $dBase = "$($p.nombre) en $(Fmt $p.formato) cm: $($tipo.ToLower()) $efTxt, acabado $($p.acabado.ToLower())."
+  $desc = "$dBase Calcula las $($p.unidad)s que necesitas y pide presupuesto con colocación."
+  if ($desc.Length -gt 158) { $desc = "$dBase Pide presupuesto con colocación en 24 h." }
+  if ($desc.Length -gt 158) { $desc = "$dBase Presupuesto en 24 h." }
   $imgsAbs = @($p.fotos | ForEach-Object { "$SITE/materiales/img/$_.jpg" })
   $product = [ordered]@{
     '@type' = 'Product'; name = "$($p.nombre) $($p.formato) cm"; image = $imgsAbs; description = $p.desc
@@ -309,7 +316,9 @@ foreach ($p in $prods) {
       priceSpecification = @{ '@type' = 'UnitPriceSpecification'; price = $pr; priceCurrency = 'EUR'; unitCode = 'MTK'; valueAddedTaxIncluded = $true }
       seller = @{ '@type' = 'Organization'; name = 'Subterráneo Group S.L' } }
   }
-  $ld = Json @{ '@context' = 'https://schema.org'; '@graph' = @((CrumbsLd $crumbItems), $product) }
+  # Google exige precio (offers) en los datos de producto: sin precio, solo migas de pan
+  $graph = if ($p.precio) { @((CrumbsLd $crumbItems), $product) } else { @(, (CrumbsLd $crumbItems)) }
+  $ld = Json @{ '@context' = 'https://schema.org'; '@graph' = $graph }
 
   $thumbs = ''
   if ($p.fotos.Count -gt 1) {

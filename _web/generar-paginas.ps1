@@ -6,14 +6,16 @@ $SITE = 'https://subterraneogroup.com'
 $utf8 = New-Object Text.UTF8Encoding $false
 . (Join-Path $root '_web\plantilla.ps1')
 $empresa = @{ '@id' = "$SITE/#empresa" }
-$zonas = @(@{ '@type' = 'City'; name = 'Torrent' }, @{ '@type' = 'City'; name = 'Valencia' }, @{ '@type' = 'State'; name = 'Comunidad Valenciana' })
+$pueblos = 'Picassent', 'Alaquàs', 'Aldaia', 'Xirivella', 'Paiporta', 'Catarroja', 'Silla', 'Mislata', 'Quart de Poblet', 'Manises', 'Paterna', 'Alcàsser', 'Alfafar', 'Burjassot'
+$zonas = @(@{ '@type' = 'City'; name = 'Torrent'; alternateName = 'Torrente' }, @{ '@type' = 'City'; name = 'Valencia' }) + @($pueblos | ForEach-Object { @{ '@type' = 'City'; name = $_ } })
+$pueblosTxt = (($pueblos[0..($pueblos.Count - 2)]) -join ', ') + ' y ' + $pueblos[-1]
 $wa = 'https://wa.me/34638571920?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto'
 
 $servicios = @(
-  @{ slug = 'reformas-integrales-valencia'; nombre = 'Reformas integrales'; servicio = 'Reforma integral de viviendas'
-     title = 'Reformas integrales en Valencia y Torrent | Subterráneo Group'
-     desc = 'Reforma integral de pisos y casas en Valencia y Torrent: proyecto, licencias, obra y acabados con un solo interlocutor. Presupuesto cerrado en 24 h.'
-     h1 = 'Reformas integrales en <em>Valencia y Torrent</em>'
+  @{ slug = 'reformas-integrales-valencia'; nombre = 'Reformas integrales'; servicio = 'Reforma integral de viviendas'; zona = 'reformas integrales de pisos y casas'
+     title = 'Reformas integrales en Torrent y Valencia | Subterráneo Group'
+     desc = 'Reforma integral de pisos y casas en Torrent y Valencia: proyecto, licencias, obra y acabados con un solo responsable y presupuesto cerrado por partidas.'
+     h1 = 'Reformas integrales en <em>Torrent y Valencia</em>'
      lead = 'Renovamos tu piso o tu casa de principio a fin: distribución, instalaciones, carpintería y acabados. Te encargas de elegir; nosotros del proyecto, las licencias, los gremios y los plazos.'
      img = '/interior-reforma.jpg'; alt = 'Reforma integral de vivienda en Valencia'
      tile = 'Pisos y casas de principio a fin, con un solo interlocutor.'
@@ -39,8 +41,6 @@ $servicios = @(
 <li><strong>Entrega llave en mano</strong> y limpieza final.</li>
 </ol>
 <div class="c-note"><p>Si la vivienda es tu residencia habitual y tiene más de dos años, la obra puede tributar al <strong>IVA reducido del 10 %</strong> en lugar del 21 %, siempre que los materiales que aporte la empresa no superen el 40 % del total. Te lo indicamos en el presupuesto.</p></div>
-<h2>Dónde trabajamos</h2>
-<p>Tenemos la base en <a href="/reformas/empresa-reformas-torrent/">Torrent</a> y trabajamos en Valencia y en toda la Comunidad Valenciana. Nuestro personal suma más de 15 años de oficio y hemos realizado más de 20 obras en la zona.</p>
 '@
      faq = @(
        @('¿Cuánto tarda una reforma integral de un piso?', 'Depende del tamaño y de lo que se cambie, pero un piso de unos 80-90 m² suele llevar entre 2 y 4 meses. En el presupuesto te damos un plan de obra con fechas.'),
@@ -48,11 +48,11 @@ $servicios = @(
        @('¿Puedo vivir en casa durante la reforma?', 'En una reforma integral no es recomendable: hay cortes de agua y luz, polvo y ruido. En reformas parciales, como solo un baño, sí suele ser posible.'),
        @('¿El presupuesto es cerrado?', 'Sí. Detallamos cada partida y el precio no cambia salvo que tú decidas modificar algo durante la obra.')
      ) }
-  @{ slug = 'reforma-banos-valencia'; nombre = 'Reforma de baños'; servicio = 'Reforma de baños'
-     title = 'Reforma de baños en Valencia y Torrent | Subterráneo Group'
-     desc = 'Reformamos tu baño en Valencia y Torrent: cambio de bañera por ducha, platos de obra, porcelánico de gran formato y mueble a medida. Presupuesto en 24 h.'
-     h1 = 'Reforma de baños en <em>Valencia y Torrent</em>'
-     lead = 'Del baño anticuado al baño que quieres: duchas a ras de suelo, porcelánico de gran formato, mueble suspendido y grifería de calidad. Con presupuesto cerrado y plazos claros.'
+  @{ slug = 'reforma-banos-valencia'; nombre = 'Reforma de baños'; servicio = 'Reforma de baños'; zona = 'reformas de baños y cambios de bañera por plato de ducha'
+     title = 'Reforma de baños en Torrent y Valencia | Subterráneo Group'
+     desc = 'Cambiamos tu bañera por un plato de ducha o reformamos el baño completo, con porcelánico de gran formato y mueble a medida. Presupuesto cerrado en 24 h.'
+     h1 = 'Reforma de baños en <em>Torrent y Valencia</em>'
+     lead = 'Del baño anticuado al baño que quieres: cambio de bañera por plato de ducha, duchas a ras de suelo, porcelánico de gran formato y mueble a medida. Con presupuesto cerrado y plazos claros.'
      img = '/bano-premium.jpg'; alt = 'Baño reformado con ducha de obra y espejo retroiluminado'
      tile = 'Duchas de obra, gran formato y mueble a medida.'
      body = @'
@@ -82,10 +82,10 @@ $servicios = @(
        @('¿Qué suelo es mejor para un baño?', 'Porcelánico mate o antideslizante. Es impermeable, resistente y fácil de limpiar. En imitación madera da calidez sin los problemas de la madera natural con el agua.'),
        @('¿Puedo usar el baño durante la obra?', 'Si es el único baño de la casa, mientras dura la obra no se puede usar. Planificamos los trabajos para que sea el menor tiempo posible.')
      ) }
-  @{ slug = 'reforma-cocinas-valencia'; nombre = 'Reforma de cocinas'; servicio = 'Reforma de cocinas'
-     title = 'Reforma de cocinas en Valencia y Torrent | Subterráneo Group'
-     desc = 'Reforma de cocinas en Valencia y Torrent: mobiliario a medida, encimeras de porcelánico o piedra, cocinas abiertas al salón e instalaciones nuevas. Presupuesto en 24 h.'
-     h1 = 'Reforma de cocinas en <em>Valencia y Torrent</em>'
+  @{ slug = 'reforma-cocinas-valencia'; nombre = 'Reforma de cocinas'; servicio = 'Reforma de cocinas'; zona = 'reformas de cocinas'
+     title = 'Reforma de cocinas en Torrent y Valencia | Subterráneo Group'
+     desc = 'Cocinas prácticas y bonitas: mobiliario a medida, encimeras resistentes y cocinas abiertas al salón. Obra y montaje por el mismo equipo, sin sorpresas.'
+     h1 = 'Reforma de cocinas en <em>Torrent y Valencia</em>'
      lead = 'Cocinas funcionales y bonitas: mobiliario a medida, encimeras resistentes, electrodomésticos integrados y, si quieres, abiertas al salón. Nos ocupamos de la obra y del montaje.'
      img = '/cocina-moderna.jpg'; alt = 'Cocina reformada con muebles blancos'
      tile = 'Mobiliario a medida y cocinas abiertas al salón.'
@@ -115,10 +115,10 @@ $servicios = @(
        @('¿Puedo abrir la cocina al salón?', 'Sí, si el tabique no es estructural. Lo comprobamos en la visita; si es de carga, se puede abrir con un refuerzo calculado por un técnico.'),
        @('¿Qué encimera es más resistente?', 'El porcelánico es de las más resistentes al calor, a los arañazos y a las manchas. El cuarzo y la piedra natural también son buenas opciones con distinto mantenimiento.')
      ) }
-  @{ slug = 'rehabilitacion-fachadas-valencia'; nombre = 'Rehabilitación de fachadas'; servicio = 'Rehabilitación de fachadas'
-     title = 'Rehabilitación de fachadas en Valencia y Torrent | Subterráneo Group'
-     desc = 'Rehabilitación de fachadas en Valencia y Torrent: reparación, impermeabilización, aislamiento térmico y acabados exteriores para viviendas y comunidades.'
-     h1 = 'Rehabilitación de fachadas en <em>Valencia y Torrent</em>'
+  @{ slug = 'rehabilitacion-fachadas-valencia'; nombre = 'Rehabilitación de fachadas'; servicio = 'Rehabilitación de fachadas'; zona = 'rehabilitaciones de fachadas'
+     title = 'Rehabilitación de fachadas en Torrent y Valencia | Subterráneo'
+     desc = 'Grietas, humedades y desprendimientos: reparamos, impermeabilizamos y aislamos fachadas de casas y comunidades de vecinos. Presupuesto por partidas.'
+     h1 = 'Rehabilitación de fachadas en <em>Torrent y Valencia</em>'
      lead = 'Reparamos, impermeabilizamos y renovamos fachadas de casas y edificios: grietas, humedades, desprendimientos y mejora del aislamiento, con acabados que aguantan el sol y la humedad del Mediterráneo.'
      img = '/obra-exterior.jpg'; alt = 'Fachada rehabilitada'
      tile = 'Grietas, humedades, impermeabilización y aislamiento.'
@@ -147,9 +147,9 @@ $servicios = @(
        @('¿Cuánto dura una rehabilitación de fachada?', 'Depende de la superficie y del estado, pero en una vivienda unifamiliar suele llevar entre dos y seis semanas.'),
        @('¿Qué es el aislamiento por el exterior?', 'Es una capa aislante que se coloca sobre la fachada y se reviste. Mejora mucho el confort térmico sin quitar espacio dentro de la vivienda.')
      ) }
-  @{ slug = 'instalacion-suelos-valencia'; nombre = 'Suministro e instalación de suelos'; servicio = 'Suministro e instalación de suelos porcelánicos'
-     title = 'Instalación de suelos porcelánicos en Valencia | Subterráneo Group'
-     desc = 'Suministro e instalación de suelos porcelánicos en Valencia y Torrent: gran formato, imitación madera, mármol pulido y exterior. Material y colocación en un solo presupuesto.'
+  @{ slug = 'instalacion-suelos-valencia'; nombre = 'Suministro e instalación de suelos'; servicio = 'Suministro e instalación de suelos porcelánicos'; zona = 'instalaciones de suelos porcelánicos'
+     title = 'Instalación de suelos porcelánicos en Torrent y Valencia'
+     desc = 'Elige entre más de 100 suelos porcelánicos (mármol, madera, piedra, exterior) y te los colocamos. Material y colocación en un solo presupuesto.'
      h1 = 'Suministro e instalación de <em>suelos porcelánicos</em>'
      lead = 'Elige tu suelo entre más de 100 referencias de STN Cerámica y te lo instalamos. Material y colocación en un mismo presupuesto, con un equipo acostumbrado al gran formato.'
      img = '/materiales/img/kobe-1.jpg'; alt = 'Suelo porcelánico imitación madera instalado en un salón'
@@ -181,31 +181,34 @@ $servicios = @(
        @('¿Cuántas cajas necesito?', 'En cada ficha de producto tienes una calculadora: pones los metros y te dice cuántas cajas hacen falta, con un 10 % de margen para cortes.')
      ) }
   @{ slug = 'empresa-reformas-torrent'; nombre = 'Reformas en Torrent'; servicio = 'Reformas en Torrent'
-     title = 'Empresa de reformas en Torrent | Subterráneo Group'
-     desc = 'Empresa de reformas en Torrent (Valencia): reformas integrales, baños, cocinas, fachadas y suelos. Estamos en la calle Moralets 3. Presupuesto sin compromiso en 24 h.'
+     title = 'Empresa de reformas en Torrent (Torrente) | Subterráneo Group'
+     desc = 'Somos una empresa de reformas local: pisos, baños, cocinas y fachadas, del centro a El Vedat. Visita sin compromiso y presupuesto cerrado en 24 h.'
      h1 = 'Empresa de reformas en <em>Torrent</em>'
-     lead = 'Somos una empresa de reformas de Torrent. Desde la calle Moralets trabajamos en el municipio y en toda el área de Valencia, con personal de más de 15 años de oficio.'
-     img = '/obra-empresa.jpg'; alt = 'Obra de reforma en curso'
-     tile = 'Nuestra base, en la calle Moralets 3.'
+     lead = 'Estamos cerca de tu casa, y eso se nota: visitamos la obra cuando hace falta, te damos presupuesto en 24 horas y seguimos los trabajos cada día. Conocemos bien las viviendas de la zona, desde los pisos del centro hasta los chalets de El Vedat.'
+     img = '/obra-empresa.jpg'; alt = 'Obra de reforma en curso en Torrent'
+     tile = 'Tu empresa de reformas, cerca de casa.'
      body = @'
-<h2>Tu empresa de reformas, cerca de casa</h2>
-<p>Al estar en Torrent podemos visitar tu vivienda rápido, preparar el presupuesto en menos de 24 horas y estar pendientes de la obra cada día. Conocemos el tipo de viviendas de la zona, desde pisos de los años 70 y 80 hasta chalets y casas de pueblo.</p>
-<h2>Qué hacemos</h2>
+<h2>Conocemos las casas de aquí</h2>
+<p>Pisos de los años 70 y 80 con instalaciones que piden renovación, casas de pueblo con muros gruesos y humedades, chalets y adosados en El Vedat, Mas del Jutge o Parc Central. Cada tipo de vivienda tiene sus problemas habituales, y saber cuáles son ahorra tiempo y dinero en la obra.</p>
+<h2>Baños: lo que más nos piden</h2>
+<p><strong>Cambiar la bañera por un plato de ducha</strong> en pocos días o reformar el baño completo con porcelánico de gran formato y mueble a medida. Mira cómo trabajamos en <a href="/reformas/reforma-banos-valencia/">reforma de baños</a>.</p>
+<h2>Reformas integrales de pisos y casas</h2>
+<p>Renovamos la vivienda de principio a fin con un solo responsable: distribución, instalaciones, suelos, carpintería y acabados, con los trámites de licencia incluidos. Más información en <a href="/reformas/reformas-integrales-valencia/">reformas integrales</a>.</p>
+<h2>Cocinas, fachadas y suelos</h2>
 <ul>
-<li><a href="/reformas/reformas-integrales-valencia/">Reformas integrales</a> de pisos y casas.</li>
-<li><a href="/reformas/reforma-banos-valencia/">Reforma de baños</a>: de bañera a ducha, baños completos.</li>
-<li><a href="/reformas/reforma-cocinas-valencia/">Reforma de cocinas</a> con mobiliario a medida.</li>
-<li><a href="/reformas/rehabilitacion-fachadas-valencia/">Rehabilitación de fachadas</a> e impermeabilización.</li>
-<li><a href="/reformas/instalacion-suelos-valencia/">Suministro e instalación de suelos</a> porcelánicos.</li>
-<li>Obra nueva con gestión completa del proyecto.</li>
+<li><a href="/reformas/reforma-cocinas-valencia/">Reforma de cocinas</a> con mobiliario a medida y cocinas abiertas al salón.</li>
+<li><a href="/reformas/rehabilitacion-fachadas-valencia/">Rehabilitación de fachadas</a>, humedades e impermeabilización, también para comunidades de vecinos.</li>
+<li><a href="/reformas/instalacion-suelos-valencia/">Suelos porcelánicos</a> con material y colocación en un solo presupuesto: elige entre más de 100 en nuestro <a href="/materiales/">catálogo</a>.</li>
+<li>Obra nueva y adecuación de locales comerciales.</li>
 </ul>
-<h2>Licencias en Torrent</h2>
-<p>Las reformas interiores sin cambios estructurales suelen tramitarse en el Ayuntamiento de Torrent con una declaración responsable de obras; las que afectan a la estructura o a la fachada necesitan proyecto y licencia. Nosotros preparamos la documentación y hacemos el trámite.</p>
-<h2>Visítanos o llámanos</h2>
+<h2>Licencias y trámites</h2>
+<p>Las reformas interiores sin cambios estructurales suelen tramitarse en el Ayuntamiento con una declaración responsable de obras; las que afectan a la estructura o a la fachada necesitan proyecto y licencia. Nosotros preparamos la documentación y hacemos el trámite.</p>
+<h2>Llámanos o escríbenos</h2>
 <p><strong>Subterráneo Group S.L</strong> · Calle Moralets 3, 46900 Torrent (Valencia) · <a href="tel:+34638571920">638 57 19 20</a> (teléfono y WhatsApp)</p>
 '@
      faq = @(
-       @('¿Trabajáis solo en Torrent?', 'No. Torrent es nuestra base, pero trabajamos en Valencia y en toda la Comunidad Valenciana.'),
+       @('¿Trabajáis también fuera de Torrent?', 'Sí. Es nuestra base, pero hacemos obras en Valencia y en los pueblos de l''Horta, como Picassent, Alaquàs, Aldaia, Paiporta o Catarroja.'),
+       @('¿Hacéis reformas en El Vedat y en las urbanizaciones?', 'Sí, en todo el término municipal: el centro, El Vedat, Mas del Jutge, Parc Central y las urbanizaciones, tanto en pisos como en chalets y adosados.'),
        @('¿La visita y el presupuesto tienen coste?', 'No. La visita y el presupuesto son gratuitos y sin compromiso.'),
        @('¿Cuánto tardáis en dar el presupuesto?', 'Normalmente en menos de 24 horas desde la visita.')
      ) }
@@ -266,7 +269,7 @@ $articulos = @(
        @('¿Qué IVA se aplica a la reforma de un baño?', 'El 10 % si es tu vivienda habitual, tiene más de dos años y los materiales aportados por la empresa no superan el 40 % del total. Si no, el 21 %.')
      ) }
   @{ slug = 'porcelanico-o-tarima-que-suelo-elegir'; fecha = '2026-11-15'; min = 5
-     title = 'Porcelánico o tarima: qué suelo elegir para tu casa | Subterráneo Group'
+     title = 'Porcelánico o tarima: qué suelo elegir para tu casa'
      desc = 'Porcelánico imitación madera o tarima flotante: comparamos resistencia al agua, durabilidad, suelo radiante, instalación y confort para que elijas bien.'
      h1 = 'Porcelánico o tarima: <em>qué suelo elegir</em>'
      lead = 'Los dos dan el aspecto cálido de la madera, pero se comportan de forma muy distinta. Te contamos en qué se diferencian y cuál conviene en cada caso.'
@@ -345,7 +348,7 @@ $ctaBox = "<section class=`"c-cta`"><div><h2>¿Hablamos de tu proyecto?</h2><p>V
 function FaqHtml($faq) { '<section class="c-faq"><h2>Preguntas frecuentes</h2>' + (($faq | ForEach-Object { "<details><summary>$(Esc $_[0])</summary><p>$(Esc $_[1])</p></details>" }) -join '') + '</section>' }
 function FaqLd($faq) { @{ '@type' = 'FAQPage'; mainEntity = @($faq | ForEach-Object { @{ '@type' = 'Question'; name = $_[0]; acceptedAnswer = @{ '@type' = 'Answer'; text = $_[1] } } }) } }
 function Tiles($items, $base) {
-  '<div class="c-grid">' + (($items | ForEach-Object { "<a class=`"c-tile`" href=`"/$base/$($_.slug)/`"><img src=`"$($_.img)`" alt=`"$(Esc $_.alt)`" width=`"600`" height=`"450`" loading=`"lazy`"><div><h2>$(Esc ($_.h1 -replace '<[^>]+>', ''))</h2><p>$(Esc $_.tile)</p><span>Ver más →</span></div></a>" }) -join '') + '</div>'
+  '<div class="c-grid">' + (($items | ForEach-Object { "<a class=`"c-tile`" href=`"/$base/$($_.slug)/`"><img src=`"$($_.img)`" alt=`"$(Esc $_.alt)`" width=`"600`" height=`"450`" loading=`"lazy`"><div><h2>$(Esc $(if ($_.nombre) { $_.nombre } else { $_.h1 -replace '<[^>]+>', '' }))</h2><p>$(Esc $_.tile)</p><span>Ver más →</span></div></a>" }) -join '') + '</div>'
 }
 $fechaTxt = { param($d) ([datetime]$d).ToString('d \de MMMM \de yyyy', [Globalization.CultureInfo]::GetCultureInfo('es-ES')) }
 
@@ -358,13 +361,14 @@ foreach ($s in $servicios) {
       @{ '@type' = 'Service'; name = $s.servicio; serviceType = $s.servicio; description = $s.desc; url = "$SITE$url"; image = "$SITE$($s.img)"; provider = $empresa; areaServed = $zonas },
       (FaqLd $s.faq)) }
   $otros = @($servicios | Where-Object { $_.slug -ne $s.slug })
+  $zonaHtml = if ($s.zona) { "<h2>Dónde trabajamos</h2>`n<p>Tenemos la base en <a href=`"/reformas/empresa-reformas-torrent/`">Torrent</a> y trabajamos en Valencia y en toda l'Horta.</p>" } else { '' }
   $html = (Head $s.title $s.desc $url $s.img $ld) + (Get-Nav 'reformas') + @"
   <main class="m-page">
     <div class="m-wrap">
       $(Crumbs $crumbs)
       <header class="c-hero">
         <div>
-          <p class="label-gold">Subterráneo Group · Reformas</p>
+          <p class="label-gold">Subterráneo Group · Bien hecho, hasta donde no se ve</p>
           <h1>$($s.h1)</h1>
           <p class="c-lead">$(Esc $s.lead)</p>
           $ctaRow
@@ -374,6 +378,7 @@ foreach ($s in $servicios) {
       </header>
       <article class="c-body">
 $($s.body)
+$zonaHtml
       </article>
       $(FaqHtml $s.faq)
       $ctaBox
@@ -386,14 +391,14 @@ $($s.body)
 
 # ── Índice de reformas ──
 $crumbs = @(@('Inicio', '/'), @('Reformas', $null))
-$ld = Json @{ '@context' = 'https://schema.org'; '@graph' = @((CrumbsLd $crumbs), @{ '@type' = 'CollectionPage'; name = 'Reformas en Valencia y Torrent'; url = "$SITE/reformas/"; about = $empresa }) }
-$html = (Head 'Reformas en Valencia y Torrent | Subterráneo Group' 'Empresa de reformas en Valencia y Torrent: reformas integrales, baños, cocinas, fachadas y suelos porcelánicos. Presupuesto cerrado y sin compromiso en 24 h.' '/reformas/' '/interior-reforma.jpg' $ld) + (Get-Nav 'reformas') + @"
+$ld = Json @{ '@context' = 'https://schema.org'; '@graph' = @((CrumbsLd $crumbs), @{ '@type' = 'CollectionPage'; name = 'Reformas en Torrent y Valencia'; url = "$SITE/reformas/"; about = $empresa }) }
+$html = (Head 'Reformas en Torrent y Valencia | Subterráneo Group' 'Reformas integrales, baños, cocinas, fachadas y suelos porcelánicos con un solo responsable de obra. Presupuesto cerrado y sin compromiso en 24 h.' '/reformas/' '/interior-reforma.jpg' $ld) + (Get-Nav 'reformas') + @"
   <main class="m-page">
     <div class="m-wrap">
       $(Crumbs $crumbs)
       <header class="m-hero">
         <div>
-          <h1>Reformas en <em>Valencia y Torrent</em></h1>
+          <h1>Reformas en <em>Torrent y Valencia</em></h1>
           <p>Reformas integrales, baños, cocinas, fachadas y suelos. Nos encargamos del proyecto, las licencias, la obra y los acabados, con un presupuesto cerrado en menos de 24 horas.</p>
         </div>
         <div class="m-usp"><div><b>+15</b><span>Años de oficio</span></div><div><b>+20</b><span>Obras</span></div><div><b>24 h</b><span>Presupuesto</span></div></div>
@@ -414,7 +419,7 @@ foreach ($a in $articulos) {
       @{ '@type' = 'Article'; headline = ($a.h1 -replace '<[^>]+>', ''); description = $a.desc; image = "$SITE$($a.img)"; datePublished = $a.fecha; dateModified = $a.fecha
          author = @{ '@type' = 'Organization'; name = 'Subterráneo Group'; url = "$SITE/" }; publisher = $empresa; mainEntityOfPage = "$SITE$url"; inLanguage = 'es-ES' },
       (FaqLd $a.faq)) }
-  $html = (Head $a.title $a.desc $url $a.img $ld 'index, follow' 'article') + (Get-Nav '') + @"
+  $html = (Head $a.title $a.desc $url $a.img $ld 'index, follow, max-image-preview:large' 'article') + (Get-Nav '') + @"
   <main class="m-page">
     <div class="m-wrap">
       $(Crumbs $crumbs)

@@ -9,7 +9,7 @@ function Write-Page([string] $rel, [string] $html) {
 }
 function Json($o) { ($o | ConvertTo-Json -Depth 12 -Compress) -replace '</', '<\/' }
 
-function Head($title, $desc, $canonical, $image, $jsonld, $robots = 'index, follow', $ogType = 'website') {
+function Head($title, $desc, $canonical, $image, $jsonld, $robots = 'index, follow, max-image-preview:large', $ogType = 'website') {
 @"
 <!DOCTYPE html>
 <html lang="es">
@@ -70,7 +70,7 @@ function Get-Footer([bool] $quote = $false) {
   <footer class="footer">
     <div class="footer__top">
       <img src="/logo/logo/isotipo/transparente/subterraneo-isotipo-transparente-256.png" alt="" class="footer__logo" width="70" height="70" loading="lazy">
-      <p class="footer__tagline">Reformas integrales · Suelos porcelánicos · Torrent y Comunidad Valenciana</p>
+      <p class="footer__tagline">Bien hecho, hasta donde no se ve</p>
       <nav class="footer__nav" aria-label="Reformas">
         <a href="/reformas/reformas-integrales-valencia/">Reformas integrales</a>
         <a href="/reformas/reforma-banos-valencia/">Reforma de baños</a>
