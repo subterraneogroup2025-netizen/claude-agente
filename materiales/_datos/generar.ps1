@@ -36,8 +36,17 @@ $pack = @{
   'general|75x150'  = @(10, 1, 1.11, 25.0);   'general|100x100' = @(10, 2, 1.98, 44.38)
   'general|23x120'  = @(9.7, 4, 1.09, 22.22); 'general|30x150' = @(10, 3, 1.35, 28.5)
   'general|30x180'  = @(8.5, 3, 1.62, 46.66)
+  'general-nr|23x120' = @(9.7, 4, 1.12, 22.78)
   '2out|60x90' = @(20, 2, 1.07, 44.76); '2out|100x100' = @(20, 1, 0.99, 42.5); '2out|60x120' = @(20, 1, 0.71, 30.67)
   'xlim|120x280' = @(6, 1, 3.36, 0)
+}
+# Medida real de fabricación (lista de embalaje de los catálogos STN); "general-nr" = pieza no rectificada
+$real = @{
+  'astra|120x120' = '119 × 119'; 'astra|60x120' = '59 × 119'; 'astra|75x150' = '73,5 × 148'; 'astra|100x100' = '98 × 98'
+  'general|120x120' = '120 × 120'; 'general|60x120' = '59,5 × 120'; 'general|75x150' = '74,5 × 149,5'; 'general|100x100' = '99,5 × 99,5'
+  'general|23x120' = '22,7 × 119,5'; 'general|30x150' = '30 × 149,5'; 'general|30x180' = '30 × 180'
+  'general-nr|23x120' = '23,3 × 120'
+  '2out|60x90' = '59,5 × 90'; '2out|100x100' = '99,5 × 99,5'; '2out|60x120' = '59,5 × 120'
 }
 $efectoTxt = @{ marmol = 'efecto mármol'; piedra = 'efecto piedra'; madera = 'imitación madera'; cemento = 'efecto cemento'; terrazo = 'terrazo' }
 $efectoCorto = @{ marmol = 'Mármol'; piedra = 'Piedra'; madera = 'Madera'; cemento = 'Cemento'; terrazo = 'Terrazo' }
@@ -135,6 +144,7 @@ foreach ($p in $prods) {
   $p | Add-Member -NotePropertyName piezas -NotePropertyValue $pk[1]
   $p | Add-Member -NotePropertyName m2caja -NotePropertyValue $pk[2]
   $p | Add-Member -NotePropertyName kg -NotePropertyValue $pk[3]
+  $p | Add-Member -NotePropertyName real -NotePropertyValue $real[$k]
   $p | Add-Member -NotePropertyName unidad -NotePropertyValue $(if ($p.linea -eq 'xlim') { 'placa' } else { 'caja' })
   $p | Add-Member -NotePropertyName precio -NotePropertyValue $(if ($precios.ContainsKey($p.slug)) { $precios[$p.slug] } else { $null })
   $p | Add-Member -NotePropertyName fotos -NotePropertyValue @($p.imgs -split ',')
@@ -424,10 +434,13 @@ foreach ($p in $prods) {
   }
   $taxNote = if ($p.precio) { 'IVA incluido<br>Precio por m²' } else { 'Presupuesto<br>sin compromiso' }
   $specRows = @(
-    @('Material', $(if ($p.linea -eq 'xlim') { 'Placa de gres porcelánico rectificado' } else { 'Gres porcelánico rectificado' })),
+    @('Material', $(if ($p.linea -eq 'xlim') { 'Placa de gres porcelánico rectificado' } elseif ($p.linea -eq 'general-nr') { 'Gres porcelánico (no rectificado)' } else { 'Gres porcelánico rectificado' })),
     @('Aspecto', ($efTxt.Substring(0, 1).ToUpper() + $efTxt.Substring(1))),
     @('Acabado', $p.acabado),
-    @('Formato', "$(Fmt $p.formato) cm"),
+    @('Formato nominal', "$(Fmt $p.formato) cm")
+  )
+  if ($p.real) { $specRows += , @('Medida real de fabricación', "$($p.real) cm") }
+  $specRows += @(
     @('Espesor', "$($p.esp.ToString($inv).Replace('.', ',')) mm"),
     @("Piezas por $($p.unidad)", "$($p.piezas)"),
     @("m² por $($p.unidad)", "$(Dec $p.m2caja) m²")
