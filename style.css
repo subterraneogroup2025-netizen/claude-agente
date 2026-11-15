@@ -638,6 +638,26 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
 .gallery__item { cursor: pointer; }
 
 /* ════════════════════════════
+   CÓMO TRABAJAMOS
+════════════════════════════ */
+.steps {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+}
+.step {
+  background: var(--bg-card); border: 1px solid var(--gold-rim);
+  padding: 2rem 1.5rem; position: relative;
+}
+.step__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.4rem; height: 2.4rem; border: 1px solid var(--gold); border-radius: 50%;
+  font-family: var(--serif); font-size: 1.2rem; color: var(--gold); margin-bottom: 1rem;
+}
+.step h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+.step p { font-size: 0.85rem; color: var(--text-sec); line-height: 1.8; font-weight: 300; }
+.steps__cta { text-align: center; margin-top: 2.5rem; }
+
+/* ════════════════════════════
    RESPONSIVE TABLET (≤900px)
 ════════════════════════════ */
 @media (max-width: 900px) {
@@ -683,6 +703,9 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
   /* Metrics */
   .metric__sep { display: none; }
   .metric { padding: 1.2rem 1.5rem; }
+
+  /* Cómo trabajamos */
+  .steps { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ════════════════════════════
@@ -701,15 +724,10 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 500; }
   .form-row { grid-template-columns: 1fr; }
   .about__badge { right: 0.5rem; }
 
-  /* WP sube por encima de la barra CTA */
-  .whatsapp-btn {
-    bottom: 5.2rem;
-    right: 1rem;
-    width: 52px;
-    height: 52px;
-  }
-  .whatsapp-btn::before { animation: none; }
-  .whatsapp-btn::after  { display: none; }
+  .steps { grid-template-columns: 1fr; }
+
+  /* En móvil ya está la barra fija con Llamar y WhatsApp: sobra el botón redondo */
+  .whatsapp-btn { display: none; }
 }
 
 /* ════════════════════════════

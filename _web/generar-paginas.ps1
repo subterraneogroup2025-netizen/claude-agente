@@ -202,7 +202,7 @@ $servicios = @(
 <h2>Licencias en Torrent</h2>
 <p>Las reformas interiores sin cambios estructurales suelen tramitarse en el Ayuntamiento de Torrent con una declaración responsable de obras; las que afectan a la estructura o a la fachada necesitan proyecto y licencia. Nosotros preparamos la documentación y hacemos el trámite.</p>
 <h2>Visítanos o llámanos</h2>
-<p><strong>Subterráneo Group S.L</strong> · Calle Moralets 3, 46900 Torrent (Valencia) · <a href="tel:+34638571920">638 57 19 20</a> · <a href="tel:+34747416814">747 41 68 14</a></p>
+<p><strong>Subterráneo Group S.L</strong> · Calle Moralets 3, 46900 Torrent (Valencia) · <a href="tel:+34638571920">638 57 19 20</a> (teléfono y WhatsApp)</p>
 '@
      faq = @(
        @('¿Trabajáis solo en Torrent?', 'No. Torrent es nuestra base, pero trabajamos en Valencia y en toda la Comunidad Valenciana.'),
