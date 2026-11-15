@@ -374,7 +374,7 @@ $cards
 Listing $prods @{
   url = '/materiales/'; titleShort = 'Suelos porcelánicos'
   title = 'Suelos porcelánicos en Valencia: mármol, madera y gran formato | Subterráneo Group'
-  desc = 'Más de 70 suelos porcelánicos de STN Cerámica: efecto mármol pulido, imitación madera, piedra, cemento, terrazo y exterior antideslizante. Calcula m² y pide presupuesto.'
+  desc = 'Más de 100 suelos porcelánicos de STN Cerámica: efecto mármol pulido, imitación madera, piedra, cemento, terrazo y exterior antideslizante. Calcula m² y pide presupuesto.'
   h1 = 'Suelos <em>porcelánicos</em>'
   intro = 'Porcelánico de primera calidad fabricado en Castellón. Calcula los metros que necesitas y te enviamos el presupuesto, con la colocación incluida si la quieres.'
   seoTitle = 'Suministro e instalación de suelos en Valencia'
