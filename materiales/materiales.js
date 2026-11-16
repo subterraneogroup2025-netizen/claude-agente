@@ -86,6 +86,7 @@
       `Colocación: ${$('#m-inst').value}`,
       nombre && `Nombre: ${nombre}`, tel && `Teléfono: ${tel}`, loc && `Localidad: ${loc}`]
       .filter(Boolean).join('\n');
+    if (window.trackConversion) trackConversion('suelos');
     window.open(`https://wa.me/${WP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
   });
 
@@ -148,6 +149,7 @@
     $('[data-wp-now]').addEventListener('click', () => {
       const r = result();
       const msg = `Hola, quiero presupuesto de ${p.nombre} ${p.formato} cm: ${r.cajas} ${p.unidad}${r.cajas === 1 ? '' : 's'} (${dec(r.m2)} m²). Colocación: ${$('#m-inst-pdp').checked ? 'Sí' : 'No'}.`;
+      if (window.trackConversion) trackConversion('suelos');
       window.open(`https://wa.me/${WP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
     });
   }

@@ -20,15 +20,66 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && lb && lb.classList.contains('open')) closeVideo();
 });
 
+/* ── MEDICIÓN DE GOOGLE ADS (solo si el visitante acepta las cookies) ──
+   ADS_ID: el "ID de conversión" de Google Ads (AW-...). Vacío = medición apagada.
+   ADS_LABELS: la "etiqueta de conversión" de cada acción, desde Objetivos → Conversiones. */
+const ADS_ID = 'AW-18576970369';   /* cuenta Google Ads 553-976-9241 */
+const ADS_LABELS = {
+  whatsapp:   'ZFWeCPjg_rgdEIGlmJpF',   /* WhatsApp (clic en la web) */
+  llamada:    'nZV4CPvg_rgdEIGlmJpF',   /* Llamada (clic en el teléfono de la web) */
+  formulario: 'FHMxCP7g_rgdEIGlmJpF',   /* Formulario de presupuesto enviado */
+  suelos:     '3yJwCIHh_rgdEIGlmJpF'    /* Presupuesto de suelos por WhatsApp */
+};
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'
+});
+let adsLoaded = false;
+function loadAds() {
+  if (adsLoaded || !ADS_ID) return;
+  adsLoaded = true;
+  gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted' });
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ADS_ID;
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', ADS_ID);
+}
+window.trackConversion = function (kind) {
+  if (!adsLoaded || !ADS_LABELS[kind]) return;
+  gtag('event', 'conversion', { send_to: ADS_ID + '/' + ADS_LABELS[kind] });
+};
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  if (a.protocol === 'tel:') trackConversion('llamada');
+  else if (/(^|\.)wa\.me$|whatsapp\.com$/.test(a.hostname)) trackConversion('whatsapp');
+}, true);
+
 /* ── COOKIES ── */
+const COOKIE_KEY = 'cookies-v2';   /* v2: el aviso ahora incluye Google Ads, se vuelve a preguntar */
 function storeCookieChoice(value) {
-  try { localStorage.setItem('cookies', value); } catch (e) { /* almacenamiento bloqueado */ }
+  try { localStorage.setItem(COOKIE_KEY, value); } catch (e) { /* almacenamiento bloqueado */ }
   document.getElementById('cookieBanner').classList.remove('show');
 }
-function acceptCookies() { storeCookieChoice('accepted'); }
+function acceptCookies() { storeCookieChoice('accepted'); loadAds(); }
 function declineCookies() { storeCookieChoice('declined'); }
+function resetCookies() {
+  try { localStorage.removeItem(COOKIE_KEY); } catch (e) { /* almacenamiento bloqueado */ }
+  document.cookie.split(';').map(c => c.split('=')[0].trim()).filter(n => /^_gcl|^_ga/.test(n)).forEach(n => {
+    document.cookie = n + '=; Max-Age=0; path=/';
+    document.cookie = n + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, '');
+  });
+  const banner = document.getElementById('cookieBanner');
+  if (adsLoaded) { location.reload(); return; }
+  if (banner) banner.classList.add('show');
+}
 let cookieChoice = null;
-try { cookieChoice = localStorage.getItem('cookies'); } catch (e) { /* almacenamiento bloqueado */ }
+try { cookieChoice = localStorage.getItem(COOKIE_KEY); } catch (e) { /* almacenamiento bloqueado */ }
+if (cookieChoice === 'accepted') loadAds();
 if (!cookieChoice && document.getElementById('cookieBanner')) {
   document.getElementById('cookieBanner').classList.add('show');
 }
@@ -155,6 +206,7 @@ if (contactForm) contactForm.addEventListener('submit', async function(e) {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data, EMAILJS_PUBLIC_KEY);
     msg.style.color = 'var(--gold)';
     msg.textContent = '✓ Solicitud enviada. Le contactaremos en menos de 24 horas.';
+    trackConversion('formulario');
     this.reset();
   } catch (err) {
     msg.style.color = '#e05555';
