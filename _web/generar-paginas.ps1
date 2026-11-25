@@ -18,6 +18,14 @@ $servicios = @(
      h1 = 'Reformas integrales en <em>Torrent y Valencia</em>'
      lead = 'Renovamos tu piso o tu casa de principio a fin: distribución, instalaciones, carpintería y acabados. Te encargas de elegir; nosotros del proyecto, las licencias, los gremios y los plazos.'
      img = '/interior-reforma.jpg'; alt = 'Reforma integral de vivienda en Valencia'
+     ogImg = '/logo/logo/png-negro/subterraneo-logo-negro-1024.png'
+     info = @(
+       @('Un solo responsable', 'Coordina a todos los gremios y te informa en cada fase.'),
+       @('Precio cerrado por partidas', 'No cambia salvo que tú decidas modificar algo.'),
+       @('Fechas de inicio y de fin', 'Con un plan de obra desde el presupuesto.'),
+       @('Licencias y trámites', 'Nos encargamos nosotros con el ayuntamiento.'),
+       @('Llave en mano', 'Te entregamos la casa terminada y limpia.')
+     )
      tile = 'Pisos y casas de principio a fin, con un solo interlocutor.'
      body = @'
 <h2>Una reforma, una sola llamada</h2>
@@ -31,6 +39,25 @@ $servicios = @(
 <li><strong>Carpintería interior y exterior</strong>, pintura y acabados.</li>
 <li><strong>Gestión de licencias</strong> y trámites con el ayuntamiento.</li>
 </ul>
+<h2>Lo que no se ve es lo que más dura</h2>
+<p>El suelo y los muebles se cambian con relativa facilidad. Lo que queda detrás de las paredes y debajo del suelo, no: si falla, hay que volver a romper. Por eso una reforma integral es el mejor momento para revisarlo:</p>
+<ul>
+<li><strong>Tuberías y desagües:</strong> en pisos antiguos a veces todavía hay plomo o hierro. Cambiarlos con la obra abierta evita fugas y atascos después.</li>
+<li><strong>Electricidad:</strong> más puntos de luz y enchufes, circuitos separados para cocina y climatización, y un cuadro eléctrico actualizado.</li>
+<li><strong>Bases y soleras:</strong> un suelo nuevo sobre una base desnivelada acaba con piezas que se mueven o suenan a hueco.</li>
+<li><strong>Impermeabilización:</strong> en duchas y baños, es lo que evita humedades en casa y en la del vecino.</li>
+<li><strong>Aislamiento:</strong> menos ruido y menos gasto en calefacción y aire acondicionado.</li>
+</ul>
+<h2>Las fases de una reforma integral</h2>
+<ol>
+<li><strong>Derribo y retirada de escombros.</strong></li>
+<li><strong>Tabiques y nueva distribución.</strong></li>
+<li><strong>Instalaciones:</strong> fontanería, desagües, electricidad y climatización.</li>
+<li><strong>Bases, impermeabilización y revestimientos:</strong> soleras, alicatados y suelos.</li>
+<li><strong>Carpintería, baños y cocina.</strong></li>
+<li><strong>Pintura, remates y limpieza.</strong></li>
+</ol>
+<p>El orden puede variar según la vivienda, pero respetarlo evita deshacer lo que ya está terminado.</p>
 <h2>Cómo trabajamos</h2>
 <ol>
 <li><strong>Visita y toma de medidas</strong> sin compromiso.</li>
@@ -41,6 +68,19 @@ $servicios = @(
 <li><strong>Entrega llave en mano</strong> y limpieza final.</li>
 </ol>
 <div class="c-note"><p>Si la vivienda es tu residencia habitual y tiene más de dos años, la obra puede tributar al <strong>IVA reducido del 10 %</strong> en lugar del 21 %, siempre que los materiales que aporte la empresa no superen el 40 % del total. Te lo indicamos en el presupuesto.</p></div>
+<h2>De qué depende el precio</h2>
+<ul>
+<li><strong>Los metros</strong> y el número de baños.</li>
+<li><strong>El estado de las instalaciones:</strong> no es lo mismo renovarlas enteras que aprovechar una parte.</li>
+<li><strong>Los cambios de distribución</strong>, sobre todo si se mueve la cocina o un baño.</li>
+<li><strong>Las calidades</strong> de suelos, sanitarios, mobiliario y ventanas.</li>
+<li><strong>El acceso:</strong> planta, ascensor y facilidad para cargar y retirar material.</li>
+</ul>
+<p>Por eso preferimos ver la vivienda antes de darte una cifra.</p>
+<h2>Cómo comparar dos presupuestos</h2>
+<p>Dos precios solo se pueden comparar si incluyen lo mismo. Antes de decidir, mira si está detallado cada trabajo, qué marcas o calidades se incluyen, si entran el contenedor de escombros, las licencias y la limpieza, qué plazo se fija y cómo se reparten los pagos. Un presupuesto de una sola línea suele acabar en extras.</p>
+<h2>Qué nos ayuda a orientarte</h2>
+<p>Para empezar basta con un mensaje de WhatsApp con la zona, los metros aproximados, qué quieres cambiar, para cuándo y, si puedes, unas fotos o un plano.</p>
 '@
      faq = @(
        @('¿Cuánto tarda una reforma integral de un piso?', 'Depende del tamaño y de lo que se cambie, pero un piso de unos 80-90 m² suele llevar entre 2 y 4 meses. En el presupuesto te damos un plan de obra con fechas.'),
@@ -345,6 +385,18 @@ $facts = '<ul class="c-facts"><li><b>+15</b><span>Años de oficio</span></li><li
 $ctaRow = "<div class=`"c-cta-row`"><a href=`"/#contacto`" class=`"btn-gold`">Pedir presupuesto</a><a href=`"$wa`" class=`"btn-ghost`" target=`"_blank`" rel=`"noopener`">Escribir por WhatsApp</a></div>"
 $ctaBox = "<section class=`"c-cta`"><div><h2>¿Hablamos de tu proyecto?</h2><p>Visita y presupuesto sin compromiso. Respondemos en menos de 24 horas.</p></div>$ctaRow</section>"
 
+# Páginas con tarjeta de información (campo "info"): logo y compromisos en lugar de la foto de cabecera, y WhatsApp como botón principal
+$ctaRowWa = "<div class=`"c-cta-row`"><a href=`"$wa`" class=`"btn-gold`" target=`"_blank`" rel=`"noopener`">Escribir por WhatsApp</a><a href=`"/#contacto`" class=`"btn-ghost`">Pedir presupuesto</a></div>"
+function InfoCard($items) {
+  $li = ($items | ForEach-Object { "<li><b>$(Esc $_[0])</b><span>$(Esc $_[1])</span></li>" }) -join ''
+@"
+        <aside class="c-infocard" aria-label="Nuestros compromisos">
+          <img src="/logo/logo/png-transparente/subterraneo-logo-transparente-512.png" alt="Subterráneo Group" width="180" height="136">
+          <ul>$li</ul>
+        </aside>
+"@
+}
+
 function FaqHtml($faq) { '<section class="c-faq"><h2>Preguntas frecuentes</h2>' + (($faq | ForEach-Object { "<details><summary>$(Esc $_[0])</summary><p>$(Esc $_[1])</p></details>" }) -join '') + '</section>' }
 function FaqLd($faq) { @{ '@type' = 'FAQPage'; mainEntity = @($faq | ForEach-Object { @{ '@type' = 'Question'; name = $_[0]; acceptedAnswer = @{ '@type' = 'Answer'; text = $_[1] } } }) } }
 function Tiles($items, $base) {
@@ -358,30 +410,33 @@ foreach ($s in $servicios) {
   $crumbs = @(@('Inicio', '/'), @('Reformas', '/reformas/'), @($s.nombre, $null))
   $ld = Json @{ '@context' = 'https://schema.org'; '@graph' = @(
       (CrumbsLd $crumbs),
-      @{ '@type' = 'Service'; name = $s.servicio; serviceType = $s.servicio; description = $s.desc; url = "$SITE$url"; image = "$SITE$($s.img)"; provider = $empresa; areaServed = $zonas },
+      @{ '@type' = 'Service'; name = $s.servicio; serviceType = $s.servicio; description = $s.desc; url = "$SITE$url"; image = "$SITE$(if ($s.ogImg) { $s.ogImg } else { $s.img })"; provider = $empresa; areaServed = $zonas },
       (FaqLd $s.faq)) }
   $otros = @($servicios | Where-Object { $_.slug -ne $s.slug })
   $zonaHtml = if ($s.zona) { "<h2>Dónde trabajamos</h2>`n<p>Tenemos la base en <a href=`"/reformas/empresa-reformas-torrent/`">Torrent</a> y trabajamos en Valencia y en toda l'Horta.</p>" } else { '' }
-  $html = (Head $s.title $s.desc $url $s.img $ld) + (Get-Nav 'reformas') + @"
+  $og = if ($s.ogImg) { $s.ogImg } else { $s.img }
+  $row = if ($s.info) { $ctaRowWa } else { $ctaRow }
+  $hero = if ($s.info) { InfoCard $s.info } else { "        <figure class=`"c-hero__img`"><img src=`"$($s.img)`" alt=`"$(Esc $s.alt)`" width=`"900`" height=`"1000`" fetchpriority=`"high`"></figure>" }
+  $html = (Head $s.title $s.desc $url $og $ld) + (Get-Nav 'reformas') + @"
   <main class="m-page">
     <div class="m-wrap">
       $(Crumbs $crumbs)
-      <header class="c-hero">
+      <header class="c-hero$(if ($s.info) { ' c-hero--info' })">
         <div>
           <p class="label-gold">Subterráneo Group · Bien hecho, hasta donde no se ve</p>
           <h1>$($s.h1)</h1>
           <p class="c-lead">$(Esc $s.lead)</p>
-          $ctaRow
+          $row
           $facts
         </div>
-        <figure class="c-hero__img"><img src="$($s.img)" alt="$(Esc $s.alt)" width="900" height="1000" fetchpriority="high"></figure>
+$hero
       </header>
       <article class="c-body">
 $($s.body)
 $zonaHtml
       </article>
       $(FaqHtml $s.faq)
-      $ctaBox
+      $($ctaBox.Replace($ctaRow, $row))
       <section><h2 class="m-label">Otros servicios</h2>$(Tiles $otros 'reformas')</section>
     </div>
   </main>

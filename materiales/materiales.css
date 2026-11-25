@@ -238,6 +238,23 @@
   .c-cta { padding: 1.4rem; }
 }
 
+/* Cabecera con logo e información en lugar de foto (reformas integrales) */
+.c-hero--info { grid-template-columns: 1.1fr 1fr; }
+.c-infocard { background: var(--bg-card); border: 1px solid var(--gold-rim); padding: 2rem 2.2rem; }
+.c-infocard img { width: 180px; height: auto; margin: 0 auto 1.4rem; display: block; }
+.c-infocard ul { list-style: none; }
+.c-infocard li { border-top: 1px solid #24211c; padding: 0.85rem 0; }
+.c-infocard li:last-child { padding-bottom: 0; }
+.c-infocard b { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.25rem; color: var(--gold-lt); }
+.c-infocard span { color: var(--text-sec); font-size: 0.88rem; font-weight: 300; line-height: 1.6; }
+
+@media (max-width: 1000px) {
+  .c-hero--info { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .c-infocard { padding: 1.5rem 1.3rem; }
+}
+
 @media (max-width: 1000px) {
   .m-shop { grid-template-columns: 1fr; }
   .m-filters { position: static; display: none; }
