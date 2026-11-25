@@ -258,6 +258,8 @@ h1.hero__kicker { font-weight: 500; line-height: 1.6; }
   font-weight: 500; margin-bottom: 0.6rem; color: var(--text);
 }
 .service__body p { font-size: 0.8rem; color: var(--text-sec); line-height: 1.75; font-weight: 300; }
+.service__price { display: block; margin-top: 0.6rem; color: var(--gold-lt); font-weight: 600; font-size: 0.86rem; }
+.service__note { display: block; font-size: 0.72rem; color: var(--text-sec); margin-bottom: 0.5rem; }
 
 /* ════════════════════════════
    PORTAFOLIO
